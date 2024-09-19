@@ -1,0 +1,48 @@
+---
+categories: [papers, first-author]
+format:
+  html:
+    other-links:
+        - text: Article
+          icon: newspaper
+          href: https://doi.org/10.24072/pcjournal.387
+          rel: external
+        - text: Source code
+          icon: journal-code
+          href: https://doi.org/10.5281/zenodo.8364708
+          rel: external
+title: Interlimb coordination in Parkinson’s Disease is minimally affected by a visuospatial dual task
+date: 2024-03-12
+abstract: >
+  Parkinson’s disease (PD) leads to reduced spatial and temporal interlimb coordination during gait as well as reduced coordination in the upper or lower limbs. Multi-tasking when walking is common during real-world activities, and affects some gait characteristics, like gait speed and variability. However, the impact of a dual task (DT) on intra and interlimb coordination of both lower and upper limbs when walking in people with PD remains unknown. Seventeen volunteers with mild to moderate PD (11 males, 65 ± 8 years, 173 ± 8 cm, 74 ± 20 kg, Unified Parkinson’s Disease Rating Scale motor section 10 ± 5) participated in gait trials in an Extended-CAREN system, which includes a treadmill, 12-camera Vicon motion capture system, and a 180° field-of-view virtual reality projection screen. Participants completed a 3 min walking trial and a 2 min visuospatial word recognition DT trial at their preferred walking pace. Single and DT were compared with a paired t-test, and the less and more affected (LA, MA) sides were tested for equivalence in sensitivity to the DT. During the DT, we found the LA shoulder ROM decreased by 1.5°, and the LA shoulder peak flexion decreased by 1.1° (p<.028, gav>.12). The LA and MA hip ROM were differently affected by the dual task (p=.023), and intralimb coordination was affected by dual tasking equivalently between sides (p=.004). These results suggest that during normal single-task gait, people with PD use attentional resources to compensate for reduced arm swing. Furthermore, our results indicate that any effect of DT on lower intralimb coordination is not meaningfully different between the LA and MA sides.
+author:
+    - name: Allen Hill
+      orcid: 0000-0003-0939-0765
+      affiliation:
+        - name: University of Ottawa
+          department: School of Human Kinetics
+          city: Ottawa
+          region: ON
+          country: Canada
+          url: https://www.uottawa.ca
+    - name: Julie Nantel
+      orcid: 0000-0001-7253-9222
+      affiliation:
+        - name: University of Ottawa
+          department: School of Human Kinetics
+          city: Ottawa
+          region: ON
+          country: Canada
+          url: https://www.uottawa.ca
+keywords: [Parkinson’s disease, dual task, interlimb coordination, relative phase, more affected side]
+license: CC BY
+citation:
+  type: article-journal
+  container-title: Peer Community Journal
+  publisher: Peer Community In
+  DOI: 10.24072/pcjournal.387
+  URL: https://peercommunityjournal.org/articles/10.24072/pcjournal.387/
+  ISSN: 2804-3871
+  volume: '4'
+  language: en
+---

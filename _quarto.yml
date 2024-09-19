@@ -1,0 +1,43 @@
+project:
+  type: website
+  preview:
+    port: 5000
+    watch-inputs: true
+  render:
+    - "*.qmd"
+    -  "!ideas/"
+  execute-dir: file
+
+editor:
+  render-on-save: true
+
+website:
+  title: "Allen Hill"
+  description: The personal website of Allen Hill
+  draft-mode: unlinked
+  navbar:
+    right:
+      - about.qmd
+      - projects.qmd
+      - publications.qmd
+      - icon: github
+        href: https://github.com/halleysfifthinc
+      - icon: twitter
+        href: https://twitter.com/allenofthehills
+      - icon: bluesky
+        text: Bsky
+        href: https://bsky.app/profile/halleysfifthinc.dev
+
+format:
+  html:
+    theme:
+      - litera
+      - custom.scss
+    highlight-style: gruvbox
+    fontsize: 1.2rem
+    # Enable banner style title blocks
+    title-block-banner: false
+
+
+
+

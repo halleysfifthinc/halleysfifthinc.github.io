@@ -1,0 +1,41 @@
+---
+title: "Publications"
+listing:
+  - id: first-author
+    contents: publications
+    max-description-length: 175
+    fields: [date, author, title, description]
+    sort: "date desc"
+    type: default
+    categories: false
+    sort-ui: false
+    filter-ui: false
+    include:
+      categories: [first-author]
+    exclude:
+      draft: true
+  - id: collaborations
+    contents: publications
+    max-description-length: 150
+    fields: [date, author, title, description]
+    sort: "date desc"
+    type: default
+    categories: false
+    sort-ui: false
+    filter-ui: false
+    exclude:
+      draft: true
+      categories: [first-author]
+page-layout: full
+---
+
+## First-author publications:
+
+::: {#first-author}
+:::
+
+## Collaborations:
+
+::: {#collaborations}
+:::
+

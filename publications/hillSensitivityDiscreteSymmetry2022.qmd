@@ -1,0 +1,55 @@
+---
+categories: [papers, first-author]
+format:
+  html:
+    other-links:
+        - text: Article
+          icon: newspaper
+          href: https://doi.org/10.1371/journal.pone.0268581
+          rel: external
+        - text: Source code
+          icon: journal-code
+          href: https://doi.org/10.5281/zenodo.5396401
+          rel: external
+title: 'Sensitivity of discrete symmetry metrics: Implications for metric choice'
+date: May 19, 2022
+abstract: >
+  Gait asymmetry is present in several pathological populations, including those with Parkinson’s disease, Huntington’s disease, and stroke survivors. Previous studies suggest that commonly used discrete symmetry metrics, which compare single bilateral variables, may not be equally sensitive to underlying effects of asymmetry, and the use of a metric with low sensitivity could result in unnecessarily low statistical power. The purpose of this study was to provide a comprehensive assessment of the sensitivity of commonly used discrete symmetry metrics to better inform design of future studies. Monte Carlo simulations were used to estimate the statistical power of each symmetry metric at a range of asymmetry magnitudes, group/condition variabilities, and sample sizes. Power was estimated by repeated comparison of simulated symmetric and asymmetric data with a paired t-test, where the proportion of significant results is equivalent to the power. Simulation results confirmed that not all common discrete symmetry metrics are equally sensitive to reference effects of asymmetry. Multiple symmetry metrics exhibit equivalent sensitivities, but the most sensitive discrete symmetry metric in all cases is a bilateral difference (e.g. left—right). A ratio (e.g. left/right) has poor sensitivity when group/condition variability is not small, but a log-transformation produces increased sensitivity. Additionally, two metrics which included an absolute value in their definitions showed increased sensitivity when the absolute value was removed. Future studies should consider metric sensitivity when designing analyses to reduce the possibility of underpowered research.
+author:
+    - name: Allen Hill
+      id: ah
+      orcid: 0000-0003-0939-0765
+      affiliation:
+        - name: University of Ottawa
+          department: School of Human Kinetics
+          city: Ottawa
+          region: ON
+          country: Canada
+          url: https://www.uottawa.ca
+    - name: Julie Nantel
+      id: jn
+      orcid: 0000-0001-7253-9222
+      affiliation:
+        - name: University of Ottawa
+          department: School of Human Kinetics
+          city: Ottawa
+          region: ON
+          country: Canada
+          url: https://www.uottawa.ca
+keywords: [gait asymmetry, Monte Carlo simulation]
+license: CC BY
+citation:
+  type: article-journal
+  title-short: Sensitivity of discrete symmetry metrics
+  DOI: 10.1371/journal.pone.0268581
+  URL: https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0268581
+  container-title: PLOS ONE
+  container-title-short: PLOS ONE
+  ISSN: 1932-6203
+  issue: '5'
+  page: e0268581
+  publisher: Public Library of Science
+  source: PLoS Journals
+  volume: '17'
+  language: en
+---

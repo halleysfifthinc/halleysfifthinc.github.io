@@ -1,0 +1,52 @@
+---
+categories: [papers, first-author]
+format:
+  html:
+    other-links:
+      - text: Article
+        icon: newspaper
+        href: https://doi.org/10.1371/journal.pone.0218644
+        rel: external
+      - text: Source code and data
+        icon: journal-code
+        href: https://doi.org/10.5281/zenodo.3239464
+        rel: external
+title: The effects of arm swing amplitude and lower-limb asymmetry on gait stability
+date: 2019-12-20
+abstract: >
+    Changes to arm swing and gait symmetry are symptomatic of several pathological gaits associated with reduced stability. The purpose of this study was to examine the relative contributions of arm swing and gait symmetry towards gait stability. We theorized that actively increasing arm swing would increase gait stability, while asymmetric walking would decrease gait stability. Fifteen healthy, young adults (23.4 ± 2.8 yrs) walked on a split-belt treadmill under symmetric (1.2 m/s) and asymmetric walking (left/right, 5:4 speed ratio) with three different arm swings: held, normal, and active. Trunk local dynamic stability, inter-limb coordination, and spatiotemporal gait variability and symmetry were measured. Active arm swing resulted in improved local trunk stability, increased gait variability, and decreased inter-limb coordination (p < .013). The changes in local trunk stability and gait variability during active arm swing suggests that these metrics quantify fundamentally different aspects of stability and are not always comparable. Split-belt walking caused reduced local trunk stability, increased gait variability, and increased lower limb asymmetry (p < .003). However, the arm swing symmetry was unaffected by gait asymmetry, this suggests that the decreases in gait stability are linked to the increases in gait asymmetry rather than increases in arm swing asymmetry.
+author:
+  - name: Allen Hill
+    orcid: 0000-0003-0939-0765
+    affiliation:
+      - name: University of Ottawa
+        department: School of Human Kinetics
+        city: Ottawa
+        region: ON
+        country: Canada
+        url: https://www.uottawa.ca
+  - name: Julie Nantel
+    orcid: 0000-0001-7253-9222
+    affiliation:
+      - name: University of Ottawa
+        department: School of Human Kinetics
+        city: Ottawa
+        region: ON
+        country: Canada
+        url: https://www.uottawa.ca
+keywords: [gait analysis, arm swing, gait asymmetry, dynamical systems]
+license: CC BY
+citation:
+  type: article-journal
+  container-title: PLOS ONE
+  container-title-short: PLOS ONE
+  DOI: 10.1371/journal.pone.0218644
+  URL: https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0218644
+  ISSN: 1932-6203
+  issue: '12'
+  volume: '14'
+  page: e0218644
+  publisher: Public Library of Science
+  source: PLoS Journals
+  language: en
+---

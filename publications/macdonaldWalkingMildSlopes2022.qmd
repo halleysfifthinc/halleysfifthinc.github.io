@@ -1,0 +1,77 @@
+---
+categories: [papers]
+format:
+  html:
+    other-links:
+      - text: Article
+        icon: newspaper
+        href: https://doi.org/10.3389/fspor.2021.805147
+        rel: external
+      - text: Source code and data
+        icon: journal-code
+        href: https://doi.org/10.5281/zenodo.5608535
+        rel: external
+title: >-
+  Walking on Mild Slopes and Altering Arm Swing Each Induce Specific
+  Strategies in Healthy Young Adults
+date: 25 January 2022
+abstract: >-
+  Slopes are present in everyday environments and require specific postural strategies for successful navigation; different arm strategies may be used to manage external perturbations while walking. It has yet to be determined what impact arm swing has on postural strategies and gait stability during sloped walking. We investigated the potentially interacting effects of surface slope and arm motion on gait stability and postural strategies in healthy young adults. We tested 15 healthy adults, using the CAREN-Extended system to simulate a rolling-hills environment which imparted both incline (uphill) and decline (downhill) slopes (± 3°). This protocol was completed under three imposed arm swing conditions: held, normal, active. Spatiotemporal gait parameters, mediolateral margin of stability, and postural kinematics in anteroposterior (AP), mediolateral (ML), and vertical (VT) directions were assessed. Main effects of conditions and interactions were evaluated by 2-way repeated measures analysis of variance. Our results showed no interactions between arm swing and slope; however, we found main effects of arm swing and main effects of slope. As expected, uphill and downhill sections of the rolling-hills yielded opposite stepping and postural strategies compared to level walking, and active and held arm swings led to opposite postural strategies compared to normal arm swing. Arm swing effects were consistent across slope conditions. Walking with arms held decreased gait speed, indicating a level of caution, but maintained stability comparable to that of walking with normal arm swing. Active arm swing increased both step width variability and ML-MoS during downhill sections. Alternately, ML-MoS was larger with increased step width and double support time during uphill sections compared to level, which demonstrates that distinct base of support strategies are used to manage arm swing compared to slope. The variability of the rolling-hills also required proactive base of support changes despite the mild slopes to maintain balance.
+author:
+  - name:
+      family: MacDonald
+      given: Mary-Elise
+    orcid: 0000-0002-3085-8169
+    affiliation:
+      - name: University of Ottawa
+        department: School of Human Kinetics
+        city: Ottawa
+        region: ON
+        country: Canada
+        url: https://www.uottawa.ca
+  - name:
+      family: Siragy
+      given: Tarique
+    orcid: 0000-0002-0808-0450
+    affiliation:
+      - name: University of Ottawa
+        department: School of Human Kinetics
+        city: Ottawa
+        region: ON
+        country: Canada
+        url: https://www.uottawa.ca
+  - name: Allen Hill
+    orcid: 0000-0003-0939-0765
+    affiliation:
+      - name: University of Ottawa
+        department: School of Human Kinetics
+        city: Ottawa
+        region: ON
+        country: Canada
+        url: https://www.uottawa.ca
+  - name: Julie Nantel
+    orcid: 0000-0001-7253-9222
+    affiliation:
+      - name: University of Ottawa
+        department: School of Human Kinetics
+        city: Ottawa
+        region: ON
+        country: Canada
+        url: https://www.uottawa.ca
+keywords: [gait, stability, posture, arm swing, uphill, downhill]
+license: CC BY
+citation:
+  citation-key: macdonaldWalkingMildSlopes2022
+  container-title: Frontiers in Sports and Active Living
+  container-title-short: Front. Sports Act. Living
+  DOI: 10.3389/fspor.2021.805147
+  ISSN: 2624-9367
+  language: en
+  publisher: Frontiers
+  source: Frontiers
+  type: article-journal
+  URL: >-
+    https://www.frontiersin.org/journals/sports-and-active-living/articles/10.3389/fspor.2021.805147/full
+  volume: '3'
+---
+

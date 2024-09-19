@@ -1,0 +1,108 @@
+---
+categories: [papers]
+format:
+  html:
+    other-links:
+        - text: Article
+          icon: newspaper
+          href: https://doi.org/10.1371/journal.pone.0195322
+          rel: external
+        - text: Data
+          icon: clipboard-data
+          href: https://doi.org/10.5281/zenodo.1199647
+          rel: external
+title: Medication and trial duration influence postural and pointing parameters
+  during a standing repetitive pointing task in individuals with Parkinson’s
+  disease
+date: April 5, 2018
+abstract: >
+  We aimed to determine the effects of levodopa medication on the performance of a repetitive pointing task while standing, and to investigate the optimal trial duration in individuals with Parkinson’s disease, and older adults. Seventeen individuals with Parkinson’s disease (5 freezers) and 9 older adults stood on force platforms for 30 s and 120 s while performing a bilateral repetitive pointing task, tracked by motion capture. Participants with Parkinson’s disease were assessed on and off medication and older adults were also assessed on separate days. The main findings were that: 1) on medication, participants with Parkinson’s exhibited greater center of pressure root mean square in the medial-lateral direction, greater velocity in the medial-lateral and anterior-posterior directions, and greater range in the medial-lateral direction than off medication; 2) longer trial durations resulted in greater center of pressure range in the medial-lateral and anterior-posterior directions and greater coefficient of variation in finger pointing on the least affected side; 3) Parkinson’s participants exhibited larger range in the medial-lateral direction compared to older adults; 4) off medication, freezers presented with less range and root mean square in the anterior-posterior direction than non-freezers; and 5) a correlation emerged between the freezing of gait questionnaire and pointing asymmetry and the coefficient of variation of pointing on the most affected side. Therefore, Parkinson’s medication may increase instability during a repetitive pointing task. Longer trials may provide a better depiction of sway by discriminating between those with and without neurological impairment. Individuals with Parkinson’s were less stable than older adults, supporting that they are at a greater risk for falls. The greater restrictive postural strategy in freezers compared to non-freezers is likely a factor that augments fall-risk. Lastly, the link between freezing of gait and upper-limb movement indicates that freezing may manifest first in the lower-limbs.
+author:
+  - name: 
+      family: Jehu
+      given: Deborah A.
+    orcid: 000-0002-9084-7445
+    affiliation:
+      - name: University of Ottawa
+        department: School of Human Kinetics
+        city: Ottawa
+        region: ON
+        country: Canada
+        url: https://www.uottawa.ca
+  - name:
+      family: Cantú
+      given: Hiram
+    orcid: 0000-0002-4881-3436
+    affiliation:
+      - name: McGill University
+        department: Department of Kinesiology and Physical Education
+        city: Montréal
+        region: QC
+        country: Canada
+        url: https://www.mcgill.ca/
+  - name: Allen Hill
+    orcid: 0000-0003-0939-0765
+    affiliation:
+      - name: University of Ottawa
+        department: School of Human Kinetics
+        city: Ottawa
+        region: ON
+        country: Canada
+        url: https://www.uottawa.ca
+  - name:
+      family: Paquette
+      given: Caroline
+    orcid: 0000-0001-8109-5301
+    affiliation:
+      - name: McGill University
+        department: Department of Kinesiology and Physical Education
+        city: Montréal
+        region: QC
+        country: Canada
+        url: https://www.mcgill.ca/
+      - name: Centre for Interdisciplinary Research in Rehabilitation
+        city: Montréal
+        region: QC
+        country: Canada
+        url: https://crir.ca/
+  - name:
+      family: Côté
+      given: Julie N.
+    orcid: 0000-0001-6155-8946
+    affiliation:
+      - name: McGill University
+        department: Department of Kinesiology and Physical Education
+        city: Montréal
+        region: QC
+        country: Canada
+        url: https://www.mcgill.ca/
+      - name: Centre for Interdisciplinary Research in Rehabilitation
+        city: Montréal
+        region: QC
+        country: Canada
+        url: https://crir.ca/
+  - name: Julie Nantel
+    orcid: 0000-0001-7253-9222
+    affiliation:
+      - name: University of Ottawa
+        department: School of Human Kinetics
+        city: Ottawa
+        region: ON
+        country: Canada
+        url: https://www.uottawa.ca
+license: CC BY
+citation:
+  citation-key: jehuMedicationTrialDuration2018
+  container-title: PLOS ONE
+  container-title-short: PLOS ONE
+  DOI: 10.1371/journal.pone.0195322
+  ISSN: 1932-6203
+  issue: '4'
+  language: en
+  page: e0195322
+  source: PLoS Journals
+  type: article-journal
+  URL: https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0195322
+  volume: '13'
+---
+

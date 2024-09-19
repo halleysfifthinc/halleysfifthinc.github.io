@@ -1,0 +1,111 @@
+---
+categories: [papers]
+format:
+  html:
+    other-links:
+        - text: Article
+          icon: newspaper
+          href: https://doi.org/10.1016/j.gaitpost.2019.11.010
+          rel: external
+title: The effect of various arm and walking conditions on postural dynamic stability when recovering from a trip perturbation
+date: 26 December 2019
+abstract: >
+  **Background**
+
+
+  Appropriately responding to unexpected perturbations, such as a trip, is
+  critical to sustain balance and avoid falling during walking.
+
+
+  **Research question**
+
+
+  How do arm motion and walking asymmetry affect postural stability when
+  recovering from a trip perturbation?
+
+
+  **Methods**
+
+
+  Fifteen healthy young individuals, who had no experience with treadmill
+  induced perturbations, participated in this study. The Computer-Assisted
+  Rehabilitation Environment system (CAREN-Extended) was used to simulate
+  unexpected perturbations while walking symmetrically and asymmetrically with
+  various arm swings (normal, bound, released). Whole-body angular momentum
+  (WBAM), peak trunk angular velocities, Center of Mass (COM), step width and
+  stance time were analyzed before and when recovering from trip
+  perturbations.
+
+
+  **Results**
+
+
+  Participants were able to recover their postural stability within three
+  strides following the sudden anterior-posterior trip perturbation. The
+  perturbation increased peak trunk angular velocity, the COM excursion and
+  WBAM but did not affect stance time and step width. The arm conditions had
+  significant effects on peak trunk angular velocity, WBAM and step width
+  during pre-perturbation. Walking conditions had a significant effect on all
+  variables during pre-perturbation; however, post-perturbation showed
+  significant effects only for peak trunk angular velocity, WBAM, and COM.
+
+
+  **Significance**
+
+
+  Unexpected perturbation had effects on most of gait variables; nevertheless,
+  participants fully recovered and adapted their gait pattern to sudden
+  perturbations even without using their arms while walking symmetrically and
+  asymmetrically. Arm movements could help young individuals recover after a
+  perturbation but are not essential for perturbations of moderate magnitude.
+  The effect of medial-lateral perturbations on gait still need to be
+  investigated.
+author:
+  - name: Hossein Gholizadeh
+    orcid: 0000-0001-5847-7985
+    affiliation:
+      - name: University of Ottawa
+        department: School of Human Kinetics
+        city: Ottawa
+        region: ON
+        country: Canada
+        url: https://www.uottawa.ca
+      - name: The Ottawa Hospital Rehabilitation Centre
+        department: Centre for Rehabilitation Research and Development
+        city: Ottawa
+        region: ON
+        country: Canada
+        url: https://www.ottawahospital.on.ca/en/clinical-services/deptpgrmcs/departments/rehabilitation-centre/about-the-rehabilitation-centre/
+  - name: Allen Hill
+    orcid: 0000-0003-0939-0765
+    affiliation:
+      - name: University of Ottawa
+        department: School of Human Kinetics
+        city: Ottawa
+        region: ON
+        country: Canada
+        url: https://www.uottawa.ca
+  - name: Julie Nantel
+    orcid: 0000-0001-7253-9222
+    affiliation:
+      - name: University of Ottawa
+        department: School of Human Kinetics
+        city: Ottawa
+        region: ON
+        country: Canada
+        url: https://www.uottawa.ca
+keywords: [gait, perturbation, trip, dynamic stability, accidental falls]
+copyright: 2020 Elsevier B.V. All rights reserved.
+citation:
+  citation-key: gholizadehEffectVariousArm2020
+  container-title: Gait & Posture
+  container-title-short: Gait & Posture
+  DOI: 10.1016/j.gaitpost.2019.11.010
+  ISSN: 0966-6362
+  page: 284-289
+  source: ScienceDirect
+  type: article-journal
+  URL: https://www.sciencedirect.com/science/article/pii/S0966636219317631
+  volume: '76'
+---
+

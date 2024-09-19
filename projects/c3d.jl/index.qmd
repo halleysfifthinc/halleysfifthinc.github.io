@@ -1,0 +1,41 @@
+---
+title: "C3D.jl"
+subtitle: "[![version](https://juliahub.com/docs/General/C3D/stable/version.svg)](https://juliahub.com/ui/Packages/General/C3D) [![stable-docs](https://img.shields.io/badge/docs-stable-blue.svg)](https://docs.juliahub.com/General/C3D/stable/)"
+description: Read and write `.c3d` files with Julia
+image: c3djl-logo_path.svg
+format:
+  html:
+    fig-height: 3.5
+    code-tools:
+      source: https://github.com/halleysfifthinc/C3D.jl
+author: "Allen Hill"
+date: Jun 2018
+date-format: "MMM YYYY"
+categories: [code, julia]
+jupyter: julia-sysimage-1.10
+execute:
+  cache: refresh
+---
+
+C3D.jl is a library for reading and writing `.c3d` files from Julia.
+
+```{julia}
+#| echo: false
+#| output: false
+ENV["COLUMNS"] = 60
+
+using Artifacts
+
+sample01_sha = artifact_hash("sample01", find_artifacts_toml(pwd()))
+sample01_path = artifact_path(sample01_sha)
+fn = joinpath(sample01_path, "Eb015pr.c3d")
+```
+
+```{julia}
+using C3D
+pc_real = readc3d(fn #= artifact"sample01/Eb015pr.c3d" =#)
+```
+
+Working with `.c3d` files is the standard for for motion capture and other biomechanics related measurement data (force plates, EMG, etc). I developed this Julia package to meet my own needs and to (hopefully) foster/enable other biomechanists' exploration and experimentation with using Julia for their own analyses.
+
+C3D.jl is thoroughly tested against the sample files from many different manufacturers/software versions available on [c3d.org](https://www.c3d.org/sampledata.html), and should be able to read/write any well-formed `.c3d` file (and even a number of ill-formed files).

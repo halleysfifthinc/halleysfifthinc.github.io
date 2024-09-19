@@ -1,0 +1,15 @@
+---
+title: "Projects"
+subtitle: "A selection of software, electronics, and other kinds of projects"
+listing:
+  contents: projects
+  sort: "date desc"
+  type: grid
+  fields: [title, subtitle, description, date, image]
+  date-format: "MMM, YYYY"
+  grid-columns: 2
+format:
+  html:
+    grid:
+      body-width: 900px
+---

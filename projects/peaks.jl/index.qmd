@@ -1,0 +1,64 @@
+---
+title: "Peaks.jl"
+subtitle: "[![version](https://juliahub.com/docs/General/Peaks/stable/version.svg)](https://juliahub.com/ui/Packages/General/Peaks) [![downloads](https://img.shields.io/badge/dynamic/json?url=http%3A%2F%2Fjuliapkgstats.com%2Fapi%2Fv1%2Fmonthly_downloads%2FPeaks&query=total_requests&suffix=%2Fmonth&label=downloads)](https://juliapkgstats.com/pkg/Peaks) [![stable-docs](https://img.shields.io/badge/docs-stable-blue.svg)](https://halleysfifthinc.github.io/Peaks.jl/stable)"
+description: Find peaks (local extrema) of signals
+format:
+  html:
+    fig-height: 3.5
+    code-tools:
+      source: https://github.com/halleysfifthinc/Peaks.jl
+author: "Allen Hill"
+date: Mar 2018
+date-format: "MMM YYYY"
+categories: [code, julia]
+jupyter: julia-sysimage-1.10
+execute:
+  cache: true
+---
+
+```{julia}
+#| echo: false
+#| column: body
+#| classes: preview-image
+using Peaks, Plots; gr()
+
+T = 1/25
+t = 0:T:23
+
+f(t) = 3sinpi(0.1t) + 2sinpi(0.2t) + sinpi(0.6t)
+
+y = f.(t)
+
+peaks = findmaxima(y)
+
+
+p = plotpeaks(t, y; peaks=peaks.indices, prominences=true, widths=true)
+plot!(p; fmt= :jpeg, tickfont=font(pointsize=12), legendfont=font(pointsize=12))
+```
+
+Peaks.jl is a library for finding
+[peaks](https://halleysfifthinc.github.io/Peaks.jl/stable/glossary/#peak) (i.e. local maxima
+and minima) and peak characteristics (e.g. prominence, width, etc) in vector (1D) data
+signals.
+
+Peak finding has been a foundational analytical step in every analysis during my graduate
+studies. When I started exclusively using Julia in 2018, there was no package or
+functionality that met my needs, such as:
+
+- Finding peaks in non-continuous data (i.e. sections of `NaN` or `missing` data)
+- Finding peaks for windows wider than the two directly adjacent elements
+- Finding peak prominence and/or width
+
+Peaks.jl is the product of my efforts to implement similar peak finding capabilities as I
+depended on in MATLAB. Peaks.jl is extensively tested and has features to:
+
+- Find peak (maxima or minima) locations, height, prominence, and width
+    - Filter peaks by peak spacing (window size), height, prominence, and width (including
+      "Full Width Half Maximum (FWHM)")
+- Fully supports `NaN`/`missing` with optional tolerance using keyword arg `strict`:
+    - Conventional handling/propagation of `NaN`/`missing` when `strict = true` (the default)
+    - Reasonable alternatives when `strict = false`
+- An alternative, SIMD-accelerated, fast peak finding method (with a reduced feature set
+  compared to the standard method)
+
+

@@ -1,0 +1,88 @@
+---
+categories: [papers]
+format:
+  html:
+    other-links:
+      - text: Article
+        icon: newspaper
+        href: https://doi.org/10.1371/journal.pone.0249303
+        rel: external
+title: >-
+  Recovery of dynamic stability during slips unaffected by arm swing in people
+  with Parkinson’s Disease
+date: April 6, 2021
+abstract: >-
+    The arm elevation strategy assists in recovering stability during slips in
+    healthy young and elderly individuals. However, in people with Parkinson’s
+    Disease, one of the main motor symptoms affecting the upper limbs is reduced
+    arm swing which intensifies throughout the course of the disease before
+    becoming absent. This holds direct implications for these individuals when
+    encountering slips as the arm elevation strategy is an integral component in
+    the interlimb slip response to restore stability. Arm swing’s effect in
+    recovering from slips in people with Parkinson’s Disease though remains
+    unexamined. Twenty people with Parkinson’s Disease (63.78 ± 8.97 years)
+    walked with restricted and unrestricted arm swing conditions on a dual-belt
+    treadmill where slips were induced on the least and most affected sides.
+    Data were collected on the CAREN Extended System (Motek Medical, Amsterdam,
+    NL). The Margin of Stability, linear and angular trunk velocities, as well
+    as step length, time, and width were calculated. Data were examined during
+    the slipped step and recovery step. The restricted arm swing condition,
+    compared to unrestricted, caused a faster step time during the slipped step.
+    Compared to the most affected leg, the least affected had a wider step width
+    during the slipped step. During the recovery step, the least affected leg
+    had a larger anteroposterior Margin of Stability and longer step time than
+    the most affected. No differences between our arm swing conditions suggests
+    that the normal arm swing in our participants was not more effective at
+    restoring stability after an induced slip compared to when their arm motion
+    was restricted. This may be due to the arm elevation strategy being
+    ineffective in counteracting the slip’s backward destabilization in these
+    individuals. Differences between the legs revealed that our participants
+    were asymmetrically impaired in their slip recovery response.
+author:
+  - name:
+      family: Siragy
+      given: Tarique
+    orcid: 0000-0002-0808-0450
+    affiliation:
+      - name: University of Ottawa
+        department: School of Human Kinetics
+        city: Ottawa
+        region: ON
+        country: Canada
+        url: https://www.uottawa.ca
+  - name: Allen Hill
+    orcid: 0000-0003-0939-0765
+    affiliation:
+      - name: University of Ottawa
+        department: School of Human Kinetics
+        city: Ottawa
+        region: ON
+        country: Canada
+        url: https://www.uottawa.ca
+  - name: Julie Nantel
+    orcid: 0000-0001-7253-9222
+    affiliation:
+      - name: University of Ottawa
+        department: School of Human Kinetics
+        city: Ottawa
+        region: ON
+        country: Canada
+        url: https://www.uottawa.ca
+license: CC BY
+keywords: [dynamic stability, arm swing, slips, Parkinson's disease]
+citation:
+  citation-key: siragyRecoveryDynamicStability2021
+  container-title: PLOS ONE
+  container-title-short: PLOS ONE
+  DOI: 10.1371/journal.pone.0249303
+  ISSN: 1932-6203
+  issue: '4'
+  language: en
+  page: e0249303
+  publisher: Public Library of Science
+  source: PLoS Journals
+  type: article-journal
+  URL: https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0249303
+  volume: '16'
+---
+

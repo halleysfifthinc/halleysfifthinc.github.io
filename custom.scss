@@ -1,0 +1,18 @@
+/*-- scss:defaults --*/
+// $code-annotation-higlight-color: rgba(71, 153, 145, 0.50);
+// $code-annotation-higlight-bg: rgba(71, 153, 145, 0.20);
+
+/*-- scss:rules --*/
+/* Prevent my profile photo from weird zooming/expanding */
+.about-entity {
+    max-width: 463px;
+    background-position: center center;
+}
+
+.code-annotation-gutter-bg {
+    background-color: #fff0;
+}
+
+.code-annotation-gutter {
+    background-color: #fff0;
+}

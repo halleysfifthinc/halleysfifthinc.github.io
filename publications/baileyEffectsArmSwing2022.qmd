@@ -1,0 +1,64 @@
+---
+categories: [papers]
+format:
+  html:
+    other-links:
+        - text: Article
+          icon: newspaper
+          href: https://doi.org/10.1016/j.jbiomech.2021.110855
+          rel: external
+title: Effects of arm swing amplitude and lower limb asymmetry on motor variability patterns during treadmill gait
+date: 2021-11-01
+abstract: >
+    Motor variability is a fundamental feature of gait. Altered arm swing and lower limb asymmetry (LLA) may be contributing factors having been shown to affect the magnitude and dynamics of variability in spatiotemporal and trunk motion. However, the effects on lower limb joints remain unclear. Full-body kinematics of 15 healthy young adults were recorded during treadmill walking using the Computer-Assisted Rehabilitation Environment system. Participants completed six trials, combining three arm swing (AS) amplitude (normal, active, held) and two LLA (symmetrical, asymmetrical) conditions. The mean standard deviation (meanSD), maximum Lyapunov exponent (λmax), detrended fluctuation analysis scaling exponent of range of motion (DFAα), and sample entropy (SaEn) were computed for tridimensional trunk, pelvis, and lower limb joint angles, and compared using repeated-measures ANOVAs. Relative to normal AS, active AS increased meanSD of all joint angles, λmax of frontal plane hip and ankle angles, and SaEn of sagittal plane ankle angles. Active AS, however, did not affect λmax or SaEn of trunk or pelvis angles. LLA increased meanSD of sagittal plane joint angles, λmax of Euclidean norm trunk angle and of lower limb joint angles, and SaEn of ankle dorsiflexion/ plantarflexion, but decreased SaEn of tridimensional trunk angles and hip rotation in the slower moving leg. Alterations in lower limb variability with active AS and LLA suggest that young adults actively exploit their lower limb redundancies to maintain gait. This appears to preserve trunk stability and regularity during active AS but not during LLA.
+author:
+  - name: Christopher A. Bailey
+    orcid: 0000-0003-3743-5297
+    affiliation:
+      - name: University of Ottawa
+        department: School of Human Kinetics
+        city: Ottawa
+        region: ON
+        country: Canada
+        url: https://www.uottawa.ca
+  - name: Allen Hill
+    orcid: 0000-0003-0939-0765
+    affiliation:
+      - name: University of Ottawa
+        department: School of Human Kinetics
+        city: Ottawa
+        region: ON
+        country: Canada
+        url: https://www.uottawa.ca
+  - name: Ryan B. Graham
+    orcid: 0000-0001-7502-8065
+    affiliation:
+      - name: University of Ottawa
+        department: School of Human Kinetics
+        city: Ottawa
+        region: ON
+        country: Canada
+        url: https://www.uottawa.ca
+  - name: Julie Nantel
+    orcid: 0000-0001-7253-9222
+    affiliation:
+      - name: University of Ottawa
+        department: School of Human Kinetics
+        city: Ottawa
+        region: ON
+        country: Canada
+        url: https://www.uottawa.ca
+keywords: [gait, motor variability, joints, arm swing, asymmetry]
+license: CC BY-NC-ND
+citation:
+  container-title: Journal of Biomechanics
+  container-title-short: Journal of Biomechanics
+  DOI: 10.1016/j.jbiomech.2021.110855
+  ISSN: 0021-9290
+  language: en
+  page: '110855'
+  source: ScienceDirect
+  type: article-journal
+  URL: https://www.sciencedirect.com/science/article/pii/S0021929021006126
+  volume: '130'
+---

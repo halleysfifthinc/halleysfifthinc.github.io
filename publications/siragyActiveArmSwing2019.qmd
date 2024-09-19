@@ -1,0 +1,70 @@
+---
+categories: [papers]
+format:
+  html:
+    other-links:
+      - text: Article
+        icon: newspaper
+        href: https://doi.org/10.1016/j.jbiomech.2019.109529
+        rel: external
+title: >-
+  Active Arm Swing and Asymmetric Walking Leads to Increased Variability in
+  Trunk Kinematics in Young Adults
+date: 23 January 2020
+abstract: >-
+  Fall induced injuries are a leading cause for occupational injuries with the majority originating from challenging same-level walking surfaces. Despite current perturbation and fall prevention paradigms, occupational fall prevalence remains stable. Typically, these paradigms do not account for arm swing which has been demonstrated to affect the center of mass’ movement during walking. This study examined the effect of different arm swing on postural control during symmetric and asymmetric walking. Fifteen healthy young adults (age = 23.4±2.8) walked symmetrically and asymmetrically with three arm motions (normal, held, and active) on a split-belt treadmill CAREN Extended-System (Motek Medical, Amsterdam, NL). Mean, standard deviation and maximal values of trunk linear and angular velocity, and whole-body angular momentum were calculated in all three axes; additionally, step length, time and width mean and Coefficient of Variation, Margin of Stability and Harmonic Ratios were calculated. Compared to normal and held conditions, active arm increased trunk linear and angular velocity standard deviation, max velocity values, mean step length and time, as well as the Coefficient of Variation for step length, time, and width. Furthermore, whole-body angular momentum increased as a function of arm swing amplitude. Active arm swing further reduced Harmonic Ratios in the mediolateral and anteroposterior directions. Asymmetric walking increased average step time, and width as well as increased the Coefficient of Variation for step length and time but reduced left average step length and step width Coefficient of Variation. Further, asymmetric walking increased mediolateral Margin of Stability and reduced anteroposterior and mediolateral Harmonic Ratios. Finally, results demonstrated that actively increasing arm swing increases trunk linear and angular velocity variability in healthy young adults during symmetric and asymmetric treadmill walking. Findings may be due to active arm swing and asymmetric walking causing a disproportional contribution to trunk and center of mass movement causing participants to modify their base of support to maintain stability.
+author:
+  - name:
+      family: Siragy
+      given: Tarique
+    orcid: 0000-0002-0808-0450
+    affiliation:
+      - name: University of Ottawa
+        department: School of Human Kinetics
+        city: Ottawa
+        region: ON
+        country: Canada
+        url: https://www.uottawa.ca
+  - name:
+      family: Mezher
+      given: Cezar
+    affiliation:
+      - name: University of Ottawa
+        department: School of Human Kinetics
+        city: Ottawa
+        region: ON
+        country: Canada
+        url: https://www.uottawa.ca
+  - name: Allen Hill
+    orcid: 0000-0003-0939-0765
+    affiliation:
+      - name: University of Ottawa
+        department: School of Human Kinetics
+        city: Ottawa
+        region: ON
+        country: Canada
+        url: https://www.uottawa.ca
+  - name: Julie Nantel
+    orcid: 0000-0001-7253-9222
+    affiliation:
+      - name: University of Ottawa
+        department: School of Human Kinetics
+        city: Ottawa
+        region: ON
+        country: Canada
+        url: https://www.uottawa.ca
+keywords: [postural control, asymmetric walking, arm swing, variability]
+copyright: 2019 Elsevier Ltd. All rights reserved.
+citation:
+  citation-key: siragyActiveArmSwing2019
+  container-title: Journal of Biomechanics
+  container-title-short: Journal of Biomechanics
+  DOI: 10.1016/j.jbiomech.2019.109529
+  ISSN: 0021-9290
+  language: en
+  page: '109529'
+  source: ScienceDirect
+  type: article-journal
+  URL: http://www.sciencedirect.com/science/article/pii/S0021929019307833
+---
+

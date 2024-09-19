@@ -1,0 +1,61 @@
+---
+categories: [papers]
+format:
+  html:
+    other-links:
+        - text: Article
+          icon: newspaper
+          href: https://doi.org/10.1016/j.jbiomech.2019.07.013
+          rel: external
+title: Effect of arm motion on postural stability when recovering from a slip perturbation
+date: 14 October 2019
+abstract: >
+  The aim of this study was to examine the effects of various arm swing on postural stability and recovery responses to an unexpected slip during treadmill walking. Fifteen healthy young adults (23.4 ± 2.8 years old) participated in this study. The CAREN-Extended system was used to simulate unexpected slip perturbations in a safe environment while walking symmetrically and asymmetrically with various arm swings (normal, bound, released). Whole-body angular momentum (range), peak trunk angular velocities, step width and stance time were extracted before and after perturbations (when recovering from slip). All participants were able to recover their balance after two strides and no falls occurred. There were significant differences (p < 0.05) in most gait parameters between pre- and post-perturbations. Arm conditions had significant effects on all gait parameters during both pre- and post-perturbation except for stance time. Compared to symmetric walking, walking asymmetrically before a perturbation led to larger step width and stance time among the different arm conditions both before and after the perturbations. Despite the presence of significant effects of different arm and walking conditions on most gait parameters during pre- and post-perturbation, participants were able to implement stabilization strategies to prevent fall even when they were prevented from using their normal arm swing, in both symmetric and asymmetric walking. While our results indicate that perturbations were mild to moderate in magnitude, investigations with elderly and faller populations are needed to examine their susceptibility to these arm and walking conditions when trying to regain postural balance.
+author:
+  - name: Hossein Gholizadeh
+    orcid: 0000-0001-5847-7985
+    affiliation:
+      - name: University of Ottawa
+        department: School of Human Kinetics
+        city: Ottawa
+        region: ON
+        country: Canada
+        url: https://www.uottawa.ca
+      - name: The Ottawa Hospital Rehabilitation Centre
+        department: Centre for Rehabilitation Research and Development
+        city: Ottawa
+        region: ON
+        country: Canada
+        url: https://www.ottawahospital.on.ca/en/clinical-services/deptpgrmcs/departments/rehabilitation-centre/about-the-rehabilitation-centre/
+  - name: Allen Hill
+    orcid: 0000-0003-0939-0765
+    affiliation:
+      - name: University of Ottawa
+        department: School of Human Kinetics
+        city: Ottawa
+        region: ON
+        country: Canada
+        url: https://www.uottawa.ca
+  - name: Julie Nantel
+    orcid: 0000-0001-7253-9222
+    affiliation:
+      - name: University of Ottawa
+        department: School of Human Kinetics
+        city: Ottawa
+        region: ON
+        country: Canada
+        url: https://www.uottawa.ca
+keywords: [perturbation, stability, gait, falls, upper extremity, angular momentum, slip, arm swing]
+license: CC BY-NC-ND
+citation:
+  container-title: Journal of Biomechanics
+  container-title-short: Journal of Biomechanics
+  DOI: 10.1016/j.jbiomech.2019.07.013
+  ISSN: 0021-9290
+  page: '109269'
+  source: ScienceDirect
+  type: article-journal
+  URL: http://www.sciencedirect.com/science/article/pii/S002192901930466X
+  volume: '95'
+---
+
