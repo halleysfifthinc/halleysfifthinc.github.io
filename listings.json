@@ -1,0 +1,31 @@
+[
+  {
+    "listing": "/projects.html",
+    "items": [
+      "/projects/c3d.jl/index.html",
+      "/projects/peaks.jl/index.html"
+    ]
+  },
+  {
+    "listing": "/index.html",
+    "items": [
+      "/posts/zotero-webdav/index.html"
+    ]
+  },
+  {
+    "listing": "/publications.html",
+    "items": [
+      "/publications/hillReachingSteppingRespond2024.html",
+      "/publications/hillInterlimbCoordinationParkinsons2024.html",
+      "/publications/hillSensitivityDiscreteSymmetry2022.html",
+      "/publications/hillEffectsArmSwing2019.html",
+      "/publications/macdonaldWalkingMildSlopes2022.html",
+      "/publications/baileyEffectsArmSwing2022.html",
+      "/publications/siragyRecoveryDynamicStability2021.html",
+      "/publications/siragyActiveArmSwing2019.html",
+      "/publications/gholizadehEffectVariousArm2019.html",
+      "/publications/gholizadehEffectArmMotion2019.html",
+      "/publications/jehuMedicationTrialDuration2018.html"
+    ]
+  }
+]
