@@ -1,18 +1,5 @@
 [
   {
-    "listing": "/projects.html",
-    "items": [
-      "/projects/c3d.jl/index.html",
-      "/projects/peaks.jl/index.html"
-    ]
-  },
-  {
-    "listing": "/index.html",
-    "items": [
-      "/posts/zotero-webdav/index.html"
-    ]
-  },
-  {
     "listing": "/publications.html",
     "items": [
       "/publications/hillReachingSteppingRespond2024.html",
@@ -26,6 +13,21 @@
       "/publications/gholizadehEffectVariousArm2019.html",
       "/publications/gholizadehEffectArmMotion2019.html",
       "/publications/jehuMedicationTrialDuration2018.html"
+    ]
+  },
+  {
+    "listing": "/projects.html",
+    "items": [
+      "/projects/opensim-simbody-julia/index.html",
+      "/projects/c3d.jl/index.html",
+      "/projects/peaks.jl/index.html",
+      "/projects/avclan-mockingboard/index.html"
+    ]
+  },
+  {
+    "listing": "/posts.html",
+    "items": [
+      "/posts/zotero-webdav/index.html"
     ]
   }
 ]

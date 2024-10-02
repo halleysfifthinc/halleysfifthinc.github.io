@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Allen Hill">
-<meta name="description" content="Read and write .c3d files with Julia">
+<meta name="dcterms.date" content="2015-08-01">
+<meta name="description" content="Add an aux audio port to older Toyota’s by emulating a CD Changer">
 
-<title>C3D.jl – Allen Hill</title>
+<title>AVCLAN Mockingboard – Allen Hill</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,40 +21,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -106,7 +72,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -165,43 +131,44 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
+    </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">C3D.jl</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source" data-quarto-source-url="https://github.com/halleysfifthinc/C3D.jl"><i class="bi"></i> Code</button></div></div>
-<p class="subtitle lead"><a href="https://juliahub.com/ui/Packages/General/C3D"><img src="https://juliahub.com/docs/General/C3D/stable/version.svg" class="img-fluid" alt="version"></a> <a href="https://docs.juliahub.com/General/C3D/stable/"><img src="https://img.shields.io/badge/docs-stable-blue.svg" class="img-fluid" alt="stable-docs"></a></p>
+<div class="quarto-title-block"><div><h1 class="title">AVCLAN Mockingboard</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source" data-quarto-source-url="https://github.com/halleysfifthinc/AVCLAN-Mockingboard"><i class="bi"></i> Code</button></div></div>
+<p class="subtitle lead"><img src="https://img.shields.io/github/stars/halleysfifthinc/AVCLAN-Mockingboard.png" class="img-fluid"></p>
   <div class="quarto-categories">
-    <div class="quarto-category">code</div>
-    <div class="quarto-category">julia</div>
+    <div class="quarto-category">electronics</div>
   </div>
   </div>
 
 <div>
   <div class="description">
-    Read and write <code>.c3d</code> files with Julia
+    Add an aux audio port to older Toyota’s by emulating a CD Changer
   </div>
 </div>
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Allen Hill </p>
-          </div>
-  </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">Jun 2018</p>
+      <p class="date">August 1, 2015</p>
     </div>
   </div>
   
+    <div>
+    <div class="quarto-title-meta-heading">Modified</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">September 1, 2023</p>
+    </div>
+  </div>
     
   </div>
   
@@ -210,24 +177,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>C3D.jl is a library for reading and writing <code>.c3d</code> files from Julia.</p>
-<div id="ef8ca183" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">C3D</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>pc_real <span class="op">=</span> <span class="fu">readc3d</span>(fn <span class="co">#= artifact"sample01/Eb015pr.c3d" =#</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="3">
-<div class="ansi-escaped-output">
-<pre>C3DFile("…/Eb015pr.c3d")
-  Duration: 9 <span class="ansi-white-fg">s</span>
-  26<span class="ansi-white-fg"> points</span> @ 50<span class="ansi-white-fg"> Hz</span>; 16<span class="ansi-white-fg"> analog channels</span> @ 200<span class="ansi-white-fg"> Hz</span></pre>
-</div>
-</div>
-</div>
-<p>Working with <code>.c3d</code> files is the standard for for motion capture and other biomechanics related measurement data (force plates, EMG, etc). I developed this Julia package to meet my own needs and to (hopefully) foster/enable other biomechanists’ exploration and experimentation with using Julia for their own analyses.</p>
-<p>C3D.jl is thoroughly tested against the sample files from many different manufacturers/software versions available on <a href="https://www.c3d.org/sampledata.html">c3d.org</a>, and should be able to read/write any well-formed <code>.c3d</code> file (and even a number of ill-formed files).</p>
+<p>I have an early 2000’s era Toyota Camry which sadly lacks an auxiliary audio port. Two common devices that retrofit aux ports are cassette tape adapters and mini-FM transmitters. Both options would work<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, but they have functional and/or audio quality trade-offs that I’m not a fan of. A third option is to replace the stereo head-unit, but I didn’t want to disrupt the aesthetics of the original center console.</p>
+<p>Another option is that the original head-units for some (many?) older vehicles support an external CD changer. These devices would allow multiple CD’s to be played without needing to eject and re-insert a new/different CD. It turns out that (at least for Toyota’s head-unit) the audio DAC is internal to the external CD changer, and, for all intents and purposes, the only connection between the head-unit and CD changer is a pair of balanced L/R audio channels and a communication channel.</p>
+<p>This means that there is theoretically a way to feed an audio signal to the stock head-unit, as long as we can convince the head-unit to route the audio to the speakers. 🤔</p>
+<div class="page-columns page-full"><p> I must admit that there are commercially available aux input adapters that work under this principle, but I thought “Why buy something I could make myself!”</p><div class="no-row-height column-margin column-container"><span class="margin-aside">🙄 Classic. Of course, this way is more fun (but definitely not cheaper)</span></div></div>
+<section id="project-summary-and-goals" class="level2">
+<h2 class="anchored" data-anchor-id="project-summary-and-goals">Project summary and goals</h2>
+</section>
+<section id="alpha-version-summer-of-2015" class="level2">
+<h2 class="anchored" data-anchor-id="alpha-version-summer-of-2015">Alpha version; Summer of 2015</h2>
+<p>The alpha version electronics was assembled on a breadboard Arduino hat and lightly adapted<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> from previous schematics/code from <a href="https://web.archive.org/web/20211022194051/http://www.softservice.com.pl/corolla/avc/simpleaux.php">Marcin at softservice.com.pl</a>. Unfortunately my Arduino was needed for a school project that fall, and I was forced to dissasemble that incarnation. I used a cassette adaptor for the next 8 years until I finally got fed up with the incessant clicking of the (pointless) winding of the cassette.</p>
+</section>
+<section id="beta-version-summer-of-2023" class="level2">
+<h2 class="anchored" data-anchor-id="beta-version-summer-of-2023">Beta version; Summer of 2023</h2>
+<p>Coming back to the project, I didn’t understand any of the old code and decided that a full rewrite and thorough documentation.</p>
 
 
+</section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Yes, my car is old enough to have a cassette tape deck.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Changes were needed for Marcin’s Atmega8 based code to run on the faster clocked Atmega328 that early Arduino’s were based on.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
