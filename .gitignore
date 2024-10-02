@@ -1,5 +1,9 @@
 _freeze/
 _site/
+/ideas/
+.jupyter_cache/
 /*_files/
 
 /.quarto/
+
+/.env/
