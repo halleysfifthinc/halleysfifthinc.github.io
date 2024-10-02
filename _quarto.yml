@@ -17,7 +17,9 @@ website:
   draft-mode: unlinked
   navbar:
     right:
-      - about.qmd
+      - text: About
+        href: /
+      - posts.qmd
       - projects.qmd
       - publications.qmd
       - icon: github

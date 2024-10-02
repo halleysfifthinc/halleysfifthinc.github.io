@@ -1,16 +1,34 @@
 ---
-title: "Posts"
-listing:
-  contents: posts
-  sort: "date desc"
-  type: default
-  categories: true
-  sort-ui: false
-  filter-ui: false
-  exclude:
-    draft: true
-page-layout: full
-title-block-banner: true
+title: "About"
+image: profile.jpg
+image-width: 450px
+image-height: 700px
+about:
+  template: broadside
+  links:
+    - icon: twitter
+      text: Twitter
+      href: https://twitter.com/allenofthehills
+    - text: Bluesky
+      href: https://bsky.app/profile/halleysfifthinc.dev
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/allenofthehills/
+    - text: Google Scholar
+      href: https://scholar.google.com/citations?user=AnaibLAAAAAJ
+    - icon: github
+      text: Github
+      href: https://github.com/halleysfifthinc
+
 ---
 
+Hi, I'm Allen. I'm currently finishing my PhD in Human Kinetics (biomechanics) at the University of Ottawa. I'm passionate about developing rigorous methods, and improving user/developer/researcher experiences and productivity by making new tools or smoothing rough edges in existing tools. I'd like to continue working with biosignals/physiological data after finishing my PhD.
 
+In my free time, I love reading scifi/fantasy, running, mountain biking, and woodworking.
+
+## Education:
+
+- **University of Ottawa** | Ottawa, CA`<br/>`{=html}
+  Human Kinetics PhD | 2018 - 2024 (expected)
+- **LeTourneau University** | Longview, TX`<br/>`{=html}
+Engineering, biomedical conc. BS; summa cum laude with honors | 2012 - 2016
