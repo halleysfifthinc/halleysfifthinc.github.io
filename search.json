@@ -1,26 +1,5 @@
 [
   {
-    "objectID": "projects/opensim-simbody-julia/index.html",
-    "href": "projects/opensim-simbody-julia/index.html",
-    "title": "OpenSim.jl and friends",
-    "section": "",
-    "text": "OpenSim is an open-source musculoskeletal modeling, simulation, and analysis program, developed in C++. OpenSim comes with bindings to Python, Java, and MATLAB, so that users can use OpenSim with a familiar programming language.\nJulia is a fast, general-purpose, dynamic and composable programming language with a quickly growing ecosystem. Some important strengths of Julia in the context of academic research include:"
-  },
-  {
-    "objectID": "projects/opensim-simbody-julia/index.html#project-roadmap",
-    "href": "projects/opensim-simbody-julia/index.html#project-roadmap",
-    "title": "OpenSim.jl and friends",
-    "section": "Project roadmap",
-    "text": "Project roadmap\nThe Julia package manager and package ecosystem makes it easy to install binary dependencies (e.g. from C libraries, etc.) known as jlls2, and Julia can directly call C API functions. However, Julia cannot call/use C++ functions/types directly, so a wrapper (using CxxWrap.jl/libcxxwrap) is needed before C++ libraries can be used from Julia. A CxxWrap wrapper will depend on the OpenSim libraries, and all transitive dependencies must also be present/installable from the package registry. So in the process of wrapping OpenSim, jll’s for all transitive dependencies must exist as well. Furthermore, OpenSim heavily uses and exposes the Simbody API, so a prerequisite for a complete wrapper of OpenSim is a wrapper for Simbody.\n\n\n\n\n\n\n\n\ndeps\n\n\n\nopensim\n\n\nopensim\n\n\n\n\n\nezc3d\n\n\nezc3d\n\n\n\n\n\nopensim-&gt;ezc3d\n\n\n\n\n\nspdlog\n\n\nspdlog\n\n\n\n\n\nopensim-&gt;spdlog\n\n\n\n\n\nsimbody\n\n\nsimbody\n\n\n\n\n\nopensim-&gt;simbody\n\n\n\n\n\ndocopt\n\n\ndocopt.cpp\n\n\n\n\n\nopensim-&gt;docopt\n\n\n\n\n\ncasadi\n\n\ncasadi\n\n\n\n\n\nopensim-&gt;casadi\n\n\n\n\n\neigen\n\n\neigen\n\n\n\n\n\nopensim-&gt;eigen\n\n\n\n\n\nipopt\n\n\nipopt\n\n\n\n\n\nopensim-&gt;ipopt\n\n\n\n\n\nadolc\n\n\nadolc\n\n\n\n\n\nopensim-&gt;adolc\n\n\n\n\n\ncolpack\n\n\ncolpack\n\n\n\n\n\nopensim-&gt;colpack\n\n\n\n\n\ncasadi-&gt;ipopt\n\n\n\n\n\n\n OpenSim dependency tree \n\n\n\n\nThe inverse of OpenSim’s dependency tree roughly describes the prerequisites for each library (jll’s and/or wrappers).\n\n\n\n\n\n\n\n\ninvdeps\n\n\n\nipopt_jll\n\n\nIpopt_jll ✅\n\n\n\n\n\ncasadi_jll\n\n\nCasADi_jll ✅\n\n\n\n\n\nipopt_jll-&gt;casadi_jll\n\n\n\n\n\nopensim_jll\n\nopensim_jll\n\n\n\nipopt_jll-&gt;opensim_jll\n\n\n\n\n\ncasadi_jll-&gt;opensim_jll\n\n\n\n\n\neigen_jll\n\n\nEigen_jll ✅\n\n\n\n\n\neigen_jll-&gt;opensim_jll\n\n\n\n\n\ncolpack_jll\n\n\nColPack_jll* ☑️\n\n\n\n\n\ncolpack_jll-&gt;opensim_jll\n\n\n\n\n\nadolc_jll\n\n\nADOLC_jll ✅\n\n\n\n\n\nadolc_jll-&gt;opensim_jll\n\n\n\n\n\njlsimbody_jll\n\n\njlsimbody_jll ✅\n\n\n\n\n\nsimbodyjl\n\n\nSimbody.jl 🚧\n\n\n\n\n\njlsimbody_jll-&gt;simbodyjl\n\n\n\n\n\njlopensim_jll\n\njlopensim_jll\n\n\n\njlsimbody_jll-&gt;jlopensim_jll\n\n\n\n\n\nsimbody_jll\n\nsimbody_jll ☑️\n\n\n\nsimbody_jll-&gt;jlsimbody_jll\n\n\n\n\n\nsimbody_jll-&gt;opensim_jll\n\n\n\n\n\nopensimjl\n\nOpenSim.jl\n\n\n\nsimbodyjl-&gt;opensimjl\n\n\n\n\n\nopensim_jll-&gt;jlopensim_jll\n\n\n\n\n\ndocopt_jll\n\ndocopt_jll\n\n\n\ndocopt_jll-&gt;opensim_jll\n\n\n\n\n\nspdlog_jll\n\nspdlog_jll\n\n\n\nspdlog_jll-&gt;opensim_jll\n\n\n\n\n\nezc3d_jll\n\nezc3d_jll\n\n\n\nezc3d_jll-&gt;opensim_jll\n\n\n\n\n\njlopensim_jll-&gt;opensimjl\n\n\n\n\n\n\n jll and wrapper prerequisites to implement OpenSim.jl ✅: Finished ☑️: Basically finished, may need modification/adaptation 🚧: In progress *Parts of Colpack that OpenSim relies on are disabled in the ColPack_jll build recipe  \n\n\n\n\nThere are 4 major sub-projects, but the purpose and goals have parallels:\n\njlsimbody_jll/jlopensim_jll: C++ based wrappers that make the Simbody and OpenSim API usable from Julia using CxxWrap.\n\nGoals (short and long-term):\n\nCompletely wrap the API for access from Julia\nLong-term: Add the ability to extend Simbody/OpenSim types and functionality from Julia\n\nLimitations:\n\nSimbody visualizer will not be (directly) wrapped. The OpenGL libraries that Simbody visualizer depends on have not been added to the Julia Pkg registry; I’m assuming there is a good reason for this absence. I plan on exploring the feasibility of implement a Julia version of the Simbody visualizer.\n\n\nSimbody.jl/OpenSim.jl: The Julia side interface to the Simbody/OpenSim API.\n\nGoals:\n\nAdapt C++ “OOP” approach to better fit Julian3 multiple-dispatch\nIncorporate Julian syntactic sugar (e.g. getindex/setindex! using brackets, getproperty/setproperty using dot access, etc)\nAdd pretty-printing show methods where appropriate to faciliate interactive development\nDocumentation!\n\nImport original API documentation into the docs REPL/search\nAdd additional documentation where needed where the Julian approach is different\n\n\n\n\n\nCurrent project status:\n\n☑️ simbody_jll\n\nBuild recipe is complete\nWaiting on a refactoring of the Simbody CMake build system\n\nSummary of current build system shortcomings simbody#789\nRelated PRs: simbody#790, simbody#792, simbody#795, simbody#801\n\n\n✅ jlsimbody/jll: Functionally complete\n\nThe Simbody API is fully wrapped with the exception of the Simbody smart pointers. (Wrapping the smart pointers is a lower priority because they are not used in the Simbody API. However, they will need to be wrapped eventually because they are used extensively in OpenSim.)\n\n🚧 Simbody.jl Remaining TODOs:\n\nDirect 1:1 port of Simbody examples to Julia for integration testing\n\nMany examples include API extension (custom types inheriting from the Simbody API) which is a long-term, lower-priority goal; these examples will not be ported at this time.\n\nDetermine reasonable conventions for what APIs to re-implement with Julian syntactic sugar\n\nUnclear which getter/setter methods should be converted to properties (i.e. getproperty/setproperty)\nMany getter/setter’s are functionally indexing operations.\nIndexing conventions: zero vs one-based indexing and how to naturally convert between the two\n\nJulia defaults to one-based indexing. Code that is agnostic to the first-index is slightly more obscure and less beginner friendly. A naive wrapper level translation of subtracting one from indices would fail because many Simbody methods return indices, and there isn’t an obviously natural/foolproof way to distinguish the origin of indices and whether they need to be shifted.\n\nNaming conventions\n\nLeave API names alone (even though unconventional for most Julia styles) or rename?\n\nIf renaming, how to handle discoverability? E.g. for users already familiar with Simbody API, how to direct to the Julian name?\n\n(minor) Conflicts with Julian convention for mutating functions to end with a bang (!)\n\nconst vs. mutable reference handling (i.e. “get” vs “upd” in Simbody API style)\n\nObjects in Julia are mutable by default; the most Julian approach seems to be to default to mutable “upd” getter methods (which will be automatically converted when needed to const reference arguments)\n\n\nConvert Simbody examples to above determined Julian style\n\nopensim_jll: Not started\n\nThe build dependency handling in the OpenSim CMake build system is outdated and inconvenient to build. PR’s to refactor the CMake configuration are planned.\n\njlopensim/jll: Not started\nOpenSim.jl: Not started"
-  },
-  {
-    "objectID": "projects/opensim-simbody-julia/index.html#footnotes",
-    "href": "projects/opensim-simbody-julia/index.html#footnotes",
-    "title": "OpenSim.jl and friends",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nThis encourages reinventing-the-wheel for common (and already solved) problems and also discourages updates for any third-party code that is depended on. Both issues increase the likelihood of bugs in research code.↩︎\n“jll” is a play on the the Windows dynamic library extension “dll”↩︎\n“Julian” means idiomatic of Julia code and customs↩︎"
-  },
-  {
     "objectID": "projects/peaks.jl/index.html",
     "href": "projects/peaks.jl/index.html",
     "title": "Peaks.jl",
@@ -88,7 +67,7 @@
     "href": "projects.html",
     "title": "Projects",
     "section": "",
-    "text": "OpenSim.jl and friends\n\n\nUsing OpenSim in Julia\n\n\n\nFeb, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nC3D.jl\n\n\n \n\n\nRead and write .c3d files with Julia\n\n\n\nJun, 2018\n\n\n\n\n\n\n\n\n\n\n\n\nPeaks.jl\n\n\n  \n\n\nFind peaks (local extrema) of signals\n\n\n\nMar, 2018\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAVCLAN Mockingboard\n\n\n\n\n\nAdd an aux audio port to older Toyota’s by emulating a CD Changer\n\n\n\nAug, 2015\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "C3D.jl\n\n\n \n\n\nRead and write .c3d files with Julia\n\n\n\nJun, 2018\n\n\n\n\n\n\n\n\n\n\n\n\nPeaks.jl\n\n\n  \n\n\nFind peaks (local extrema) of signals\n\n\n\nMar, 2018\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts.html",
@@ -145,41 +124,6 @@
     "title": "Using Caddy as a WebDAV server for Zotero",
     "section": "Footnotes",
     "text": "Footnotes\n\n\nThe paid cloud storage tiers are the source of nearly all of the funding for the Zotero project, but I have a limited budget as a grad student. Please consider paying for storage if you have the means.↩︎\nThis is generally a bad idea. Things can get out of whack if you have Zotero open on multiple devices at the same time and are making changes in Zotero (e.g. adding a reference) on both devices.↩︎\nApache also supports automatic HTTPS, but it is not enabled by default (at the time of setup in the default Arch Linux install; circa fall 2022). However, Caddy’s support for automatic HTTPS is potentially irrelevant to the final server setup.↩︎\nWhen I tried the Caddy downloads page, my build/download requests kept timing out for the platform (ARM 7) and modules I had selected.↩︎\nMake it a strong password! I recommend using a password manager like KeePassXC.↩︎\nThis command asks the server for the properties of the files under /location/of/your/files. The response will be empty if there are no files there, and otherwise will return an XML object for each file. The exact response doesn’t matter, as long as the command shows a successful connection/200 status.↩︎\nMy intuition is that this is not necessary or helpful from a security perspective; you probably have bigger problems if an attacker is able to eavesdrop on traffic internal to your server.↩︎"
-  },
-  {
-    "objectID": "projects/avclan-mockingboard/index.html",
-    "href": "projects/avclan-mockingboard/index.html",
-    "title": "AVCLAN Mockingboard",
-    "section": "",
-    "text": "I have an early 2000’s era Toyota Camry which sadly lacks an auxiliary audio port. Two common devices that retrofit aux ports are cassette tape adapters and mini-FM transmitters. Both options would work1, but they have functional and/or audio quality trade-offs that I’m not a fan of. A third option is to replace the stereo head-unit, but I didn’t want to disrupt the aesthetics of the original center console.\nAnother option is that the original head-units for some (many?) older vehicles support an external CD changer. These devices would allow multiple CD’s to be played without needing to eject and re-insert a new/different CD. It turns out that (at least for Toyota’s head-unit) the audio DAC is internal to the external CD changer, and, for all intents and purposes, the only connection between the head-unit and CD changer is a pair of balanced L/R audio channels and a communication channel.\nThis means that there is theoretically a way to feed an audio signal to the stock head-unit, as long as we can convince the head-unit to route the audio to the speakers. 🤔"
-  },
-  {
-    "objectID": "projects/avclan-mockingboard/index.html#project-summary-and-goals",
-    "href": "projects/avclan-mockingboard/index.html#project-summary-and-goals",
-    "title": "AVCLAN Mockingboard",
-    "section": "Project summary and goals",
-    "text": "Project summary and goals"
-  },
-  {
-    "objectID": "projects/avclan-mockingboard/index.html#alpha-version-summer-of-2015",
-    "href": "projects/avclan-mockingboard/index.html#alpha-version-summer-of-2015",
-    "title": "AVCLAN Mockingboard",
-    "section": "Alpha version; Summer of 2015",
-    "text": "Alpha version; Summer of 2015\nThe alpha version electronics was assembled on a breadboard Arduino hat and lightly adapted2 from previous schematics/code from Marcin at softservice.com.pl. Unfortunately my Arduino was needed for a school project that fall, and I was forced to dissasemble that incarnation. I used a cassette adaptor for the next 8 years until I finally got fed up with the incessant clicking of the (pointless) winding of the cassette."
-  },
-  {
-    "objectID": "projects/avclan-mockingboard/index.html#beta-version-summer-of-2023",
-    "href": "projects/avclan-mockingboard/index.html#beta-version-summer-of-2023",
-    "title": "AVCLAN Mockingboard",
-    "section": "Beta version; Summer of 2023",
-    "text": "Beta version; Summer of 2023\nComing back to the project, I didn’t understand any of the old code and decided that a full rewrite and thorough documentation."
-  },
-  {
-    "objectID": "projects/avclan-mockingboard/index.html#footnotes",
-    "href": "projects/avclan-mockingboard/index.html#footnotes",
-    "title": "AVCLAN Mockingboard",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nYes, my car is old enough to have a cassette tape deck.↩︎\nChanges were needed for Marcin’s Atmega8 based code to run on the faster clocked Atmega328 that early Arduino’s were based on.↩︎"
   },
   {
     "objectID": "publications/baileyEffectsArmSwing2022.html",
