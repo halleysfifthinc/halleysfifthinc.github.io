@@ -1,0 +1,175 @@
+---
+title: "OpenSim.jl and friends"
+description: "Using OpenSim in Julia"
+date: Feb 2024
+image: preview.jpg
+categories: [code, "C++", julia]
+format:
+  html:
+    toc: true
+    other-links:
+      - text: jlsimbody
+        icon: code-slash
+        href: https://github.com/halleysfifthinc/jlsimbody
+        rel: external
+      - text: Simbody.jl
+        icon: code-slash
+        href: https://github.com/halleysfifthinc/Simbody.jl
+        rel: external
+---
+
+[OpenSim](https://opensim.stanford.edu/) is an open-source musculoskeletal modeling, simulation, and analysis program, developed in C++. OpenSim comes with bindings to Python, Java, and MATLAB, so that users can use OpenSim with a familiar programming language.
+
+[Julia](https://julialang.org/) is a fast, general-purpose, dynamic and composable programming language with a quickly growing ecosystem. Some important strengths of Julia in the context of academic research include:
+
+- Julia's built-in package manager makes it easy to reproducibly depend on third-party libraries (including binaries). MATLAB's lack of support for managing (external) dependencies discourages the use of third-party code[^matlab-deps], and managing dependencies in Python is a well-established nightmare.
+- Julia solve the "two-language problem": Julia is fast, which means you don't need to port your Julia code to C/C++ for it to be fast (unlike performance sensitive Python code). Most Julia code is written in Julia itself (much of the language itself is implemented in Julia), and this makes it easier for newcomers to contribute (to the language or other packages) because they don't need to be familiar with Julia *and* C/C++.
+
+[^matlab-deps]: This encourages reinventing-the-wheel for common (and already solved) problems and also discourages updates for any third-party code that *is* depended on. Both issues increase the likelihood of bugs in research code.
+
+["If you build it, they will come"]{.aside}
+I would like to see more biomechanists and movement scientists use and experiment with the Julia programming language, but for some people, the lack of Julia bindings to OpenSim may limit or prevent any experimentation with this new/different language. The goal of this project is to create bindings to use OpenSim from Julia.
+
+## Project roadmap
+
+The Julia package manager and package ecosystem makes it easy to install binary dependencies (e.g. shared C libraries, etc.) known as `jll`s[^jll], and Julia can directly call C API functions. However, Julia cannot call/use C++ libraries directly, so a wrapper (using [CxxWrap.jl](https://github.com/JuliaInterop/CxxWrap.jl)/[libcxxwrap](https://github.com/JuliaInterop/libcxxwrap-julia)) is needed before C++ libraries can be used from Julia. A wrapper library will depend on the OpenSim libraries and, in turn, all transitive dependencies. So in the process of wrapping OpenSim, jll's for all transitive dependencies must exist as well. Furthermore, OpenSim heavily uses and exposes the Simbody API, so a prerequisite for a complete wrapper of OpenSim is a wrapper for Simbody.
+
+[^jll]: "jll" is a play on the the Windows dynamic library extension "dll"
+
+::: {.column-body-outset}
+```{dot}
+//| fig-cap: OpenSim dependency tree
+//| fig-height: 2
+//| fig-width: 9
+digraph deps {
+  fontname="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji"
+  fontsize=26
+  node [fontname="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji" fontsize=26]
+  edge [fontname="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji" fontsize=26]
+  opensim [label="opensim", URL="https://github.com/opensim-org/opensim-core", tooltip="SimTK OpenSim C++ libraries and command-line applications, and Java/Python wrapping."];
+  ezc3d [label="ezc3d", URL="https://github.com/pyomeca/ezc3d", tooltip="Easy to use C3D reader/writer for C++, Python and Matlab"];
+  spdlog [URL="https://github.com/gabime/spdlog" tooltip="Fast C++ logging library."];
+  simbody [URL="https://github.com/simbody/simbody" tooltip="High-performance C++ multibody dynamics/physics library for simulating articulated biomechanical and mechanical systems like vehicles, robots, and the human skeleton."];
+  docopt [label="docopt.cpp" URL="https://github.com/docopt/docopt.cpp" tooltip="C++11 port of docopt"];
+  casadi [URL="https://github.com/casadi/casadi" tooltip="CasADi is a symbolic framework for numeric optimization implementing automatic differentiation in forward and reverse modes on sparse matrix-valued computational graphs."];
+  eigen [URL="https://gitlab.com/libeigen/eigen/" tooltip="Eigen is a C++ template library for linear algebra: matrices, vectors, numerical solvers, and related algorithms."];
+  ipopt [URL="https://github.com/coin-or/Ipopt" tooltip="COIN-OR Interior Point Optimizer IPOPT"];
+  adolc [URL="https://github.com/coin-or/ADOL-C" tooltip="A Package for Automatic Differentiation of Algorithms Written in C/C++"];
+  colpack [URL="https://github.com/CSCsw/ColPack" tooltip="A Graph Coloring Algorithm Package"];
+  opensim -> ezc3d;
+  opensim -> spdlog;
+  opensim -> simbody;
+  opensim -> docopt;
+  opensim -> casadi;
+  casadi -> ipopt;
+  opensim -> ipopt;
+  opensim -> colpack;
+  opensim -> eigen;
+  opensim -> adolc;
+}
+```
+:::
+
+The inverse of OpenSim's dependency tree roughly describes the prerequisites for each library (jll's and/or wrappers).
+
+::: {.column-page}
+```{dot}
+//| fig-cap: |
+//|     jll and wrapper prerequisites to implement OpenSim.jl</br>
+//|     ✅: Finished/Already exists</br>
+//|     ☑️: Basically finished, may need modification/adaptation</br>
+//|     🚧: In progress</br>
+//|     *Parts of Colpack that OpenSim relies on are disabled in the [ColPack_jll build recipe](https://github.com/michel2323/ColPack/pull/1)
+//| fig-height: 3
+//| fig-width: 12
+digraph invdeps {
+  // layout="neato"
+  // mode="sgd"
+  // start="3"
+  // overlap=false
+  // nodesep="0.01"
+  // ranksep="0.01"
+  sep="0.01"
+  maxiter=2000
+  page="6 2"
+  fontname="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji";
+  fontsize=26;
+  node [fontname="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji" fontsize=26];
+  edge [fontname="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji" fontsize=26];
+  ipopt_jll [label="Ipopt_jll ✅" URL="https://juliahub.com/ui/Packages/General/Ipopt_jll"];
+  casadi_jll [label="CasADi_jll ✅" URL="https://juliahub.com/ui/Packages/General/CasADi_jll"];
+  eigen_jll [label="Eigen_jll ✅" URL="https://juliahub.com/ui/Packages/General/Eigen_jll"];
+  colpack_jll [label="ColPack_jll* ☑️" URL="https://juliahub.com/ui/Packages/General/ColPack_jll"]
+  adolc_jll [label="ADOLC_jll ✅" URL="https://juliahub.com/ui/Packages/General/ADOLC_jll"];
+  jlsimbody_jll [label="jlsimbody_jll ✅" URL="https://github.com/halleysfifthinc/jlsimbody"];
+  simbody_jll [label="simbody_jll ☑️"];
+  simbodyjl [label="Simbody.jl 🚧", URL="https://github.com/halleysfifthinc/Simbody.jl"];
+  opensimjl [label="OpenSim.jl"];
+  ipopt_jll -> casadi_jll;
+  ipopt_jll -> opensim_jll;
+  eigen_jll -> opensim_jll;
+  colpack_jll -> opensim_jll;
+  adolc_jll -> opensim_jll;
+  casadi_jll -> opensim_jll;
+  docopt_jll -> opensim_jll; // one of these is statically linked so won't actually appear/be built separately
+  spdlog_jll -> opensim_jll;
+  ezc3d_jll -> opensim_jll;
+  simbody_jll -> opensim_jll;
+  simbody_jll -> jlsimbody_jll;
+  jlsimbody_jll -> simbodyjl;
+  opensim_jll -> jlopensim_jll;
+  jlsimbody_jll -> jlopensim_jll;
+  simbodyjl -> opensimjl;
+  jlopensim_jll -> opensimjl;
+}
+```
+:::
+
+There are 4 major sub-projects, but the purpose and goals have parallels:
+
+- `jlsimbody_jll`/`jlopensim_jll`: C++ based wrappers that make the Simbody and OpenSim API usable from Julia using CxxWrap.
+  - Goals (short and long-term):
+    - Completely wrap the API for access from Julia
+    - (long-term) Add the ability to extend Simbody/OpenSim types and functionality from Julia
+  - Limitations:
+    - Simbody visualizer will not be (directly) wrapped. The OpenGL libraries that Simbody visualizer depends on have not been added to the Julia Pkg registry; I'm assuming there is a good reason for this absence. I plan on exploring the feasibility of implement a Julia version of the Simbody visualizer.
+- `Simbody.jl`/`OpenSim.jl`: The Julia side interface to the Simbody/OpenSim API.
+  - Goals:
+    - Adapt C++ "OOP" approach to better match idiomatic Julian[^julian] code (e.g. multiple-dispatch, etc)
+    - Incorporate Julian syntactic sugar (e.g. `getindex`/`setindex!` using brackets, `getproperty`/`setproperty` using dot access, etc)
+    - Add pretty-printing `show` methods where appropriate to faciliate interactive development
+    - Documentation!
+      - Import original API documentation into the docs REPL/search
+      - Add additional documentation where needed where the Julian approach is different
+
+[^julian]: "Julian" means idiomatic of Julia code and customs
+
+## Project status (as of October, '24)
+
+- ☑️ simbody_jll
+  - Build recipe is complete
+  - Waiting on a refactoring of the Simbody CMake build system
+    - Summary of current build system shortcomings [simbody#789](https://github.com/simbody/simbody/issues/789)
+    - Related PRs: [simbody#790](https://github.com/simbody/simbody/pull/790), [simbody#792](https://github.com/simbody/simbody/pull/792), [simbody#795](https://github.com/simbody/simbody/pull/795), [simbody#801](https://github.com/simbody/simbody/pull/801)
+- ✅ jlsimbody/jll: Functionally complete
+  - The Simbody API is fully wrapped with the exception of the Simbody smart pointers. (Wrapping the smart pointers is a lower priority because they are not used in the Simbody API. However, they will need to be wrapped eventually because they are used extensively in OpenSim.)
+- 🚧 Simbody.jl</br>
+  Remaining TODOs:
+  1. Direct 1:1 port of Simbody examples to Julia for integration testing
+      - Many examples include API extension (custom types inheriting from the Simbody API) which is a long-term, lower-priority goal; these examples will not be ported at this time.
+  2. Determine reasonable conventions for what APIs to re-implement with Julian syntactic sugar
+      - Unclear which getter/setter methods should be converted to properties (i.e. `getproperty`/`setproperty`)
+      - Many getter/setter's are functionally indexing operations.
+      - Indexing conventions: zero vs one-based indexing and how to naturally convert between the two
+        - Julia defaults to one-based indexing. Code that is agnostic to the first-index is slightly more obscure and less beginner friendly. A naive wrapper level translation of subtracting one from indices would fail because many Simbody methods return indices, and there isn't an obviously natural/foolproof way to distinguish the origin of indices and whether they need to be shifted.
+      - Naming conventions
+        - Leave API names alone (even though unconventional for most Julia styles) or rename?
+          - If renaming, how to handle discoverability? E.g. for users already familiar with Simbody API, how to direct to the Julian name?
+        - (minor) Conflicts with Julian convention for mutating functions to end with a bang (`!`)
+      - const vs. mutable reference handling (i.e. "get" vs "upd" in Simbody API style)
+        - Objects in Julia are mutable by default; the most Julian approach seems to be to default to mutable "upd" getter methods (which will be automatically converted when needed to const reference arguments)
+  3. Convert Simbody examples to above determined Julian style
+- [ ] opensim_jll: Not started
+  - The build dependency handling in the OpenSim CMake build system is overly complex, out-of-step with modern CMake style/practices, and inconvenient to use. PR's to refactor the CMake configuration are planned.
+- [ ] jlopensim/jll: Not started
+- [ ] OpenSim.jl: Not started
