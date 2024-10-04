@@ -68,7 +68,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<meta name="quarto:status" content="draft">
 
 
 </head>
@@ -76,7 +75,7 @@ ul.task-list li input[type="checkbox"] {
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><div id="quarto-draft-alert" class="alert alert-warning"><i class="bi bi-pencil-square"></i>Draft</div>
+  <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -137,10 +136,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#project-roadmap" id="toc-project-roadmap" class="nav-link active" data-scroll-target="#project-roadmap">Project roadmap</a>
-  <ul class="collapse">
-  <li><a href="#current-project-status" id="toc-current-project-status" class="nav-link" data-scroll-target="#current-project-status">Current project status:</a></li>
-  </ul></li>
+  <li><a href="#project-roadmap" id="toc-project-roadmap" class="nav-link active" data-scroll-target="#project-roadmap">Project roadmap</a></li>
+  <li><a href="#project-status-as-of-october-24" id="toc-project-status-as-of-october-24" class="nav-link" data-scroll-target="#project-status-as-of-october-24">Project status (as of October, ’24)</a></li>
   </ul>
 <div class="quarto-other-links"><h2>Other Links</h2><ul><li><a href="https://github.com/halleysfifthinc/jlsimbody" rel="external"><i class="bi bi-code-slash"></i>jlsimbody</a></li><li><a href="https://github.com/halleysfifthinc/Simbody.jl" rel="external"><i class="bi bi-code-slash"></i>Simbody.jl</a></li></ul></div></nav>
     </div>
@@ -150,7 +147,12 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">OpenSim.jl and friends</h1>
-</div>
+  <div class="quarto-categories">
+    <div class="quarto-category">code</div>
+    <div class="quarto-category">C++</div>
+    <div class="quarto-category">julia</div>
+  </div>
+  </div>
 
 <div>
   <div class="description">
@@ -180,13 +182,13 @@ ul.task-list li input[type="checkbox"] {
 <p><a href="https://opensim.stanford.edu/">OpenSim</a> is an open-source musculoskeletal modeling, simulation, and analysis program, developed in C++. OpenSim comes with bindings to Python, Java, and MATLAB, so that users can use OpenSim with a familiar programming language.</p>
 <p><a href="https://julialang.org/">Julia</a> is a fast, general-purpose, dynamic and composable programming language with a quickly growing ecosystem. Some important strengths of Julia in the context of academic research include:</p>
 <ul>
-<li>Julia’s built-in package manager makes it easy to reproducibly depend on third-party libraries (including binaries). MATLAB’s lack of any third-party dependency management discourages use of third-party code<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, and managing dependencies in Python is a well-established nightmare.</li>
-<li>Julia solve the “two-language problem”: Julia is fast, which means you don’t need to port your Julia code to C/C++ for it to be fast (unlike performance sensitive Python code). Most Julia code is written in Julia itself (much of the language itself is implemented in Julia), and this makes it easier for newcomers to contribute (to the language or other packages), because they don’t need to be familiar with Julia <em>and</em> C/C++.</li>
+<li>Julia’s built-in package manager makes it easy to reproducibly depend on third-party libraries (including binaries). MATLAB’s lack of support for managing (external) dependencies discourages the use of third-party code<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, and managing dependencies in Python is a well-established nightmare.</li>
+<li>Julia solve the “two-language problem”: Julia is fast, which means you don’t need to port your Julia code to C/C++ for it to be fast (unlike performance sensitive Python code). Most Julia code is written in Julia itself (much of the language itself is implemented in Julia), and this makes it easier for newcomers to contribute (to the language or other packages) because they don’t need to be familiar with Julia <em>and</em> C/C++.</li>
 </ul>
-<div class="page-columns page-full"><p> I would like to see more biomechanists and movement scientists experiment with and use the Julia programming language, but for some people, the lack of Julia bindings to OpenSim may limit or prevent any experimentation with this new/different language. The goal of this project is to create bindings to use OpenSim from Julia.</p><div class="no-row-height column-margin column-container"><span class="margin-aside">“If you build it, they will come”</span></div></div>
+<div class="page-columns page-full"><p> I would like to see more biomechanists and movement scientists use and experiment with the Julia programming language, but for some people, the lack of Julia bindings to OpenSim may limit or prevent any experimentation with this new/different language. The goal of this project is to create bindings to use OpenSim from Julia.</p><div class="no-row-height column-margin column-container"><span class="margin-aside">“If you build it, they will come”</span></div></div>
 <section id="project-roadmap" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="project-roadmap">Project roadmap</h2>
-<p>The Julia package manager and package ecosystem makes it easy to install binary dependencies (e.g.&nbsp;from C libraries, etc.) known as <code>jll</code>s<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>, and Julia can directly call C API functions. However, Julia cannot call/use C++ functions/types directly, so a wrapper (using <a href="https://github.com/JuliaInterop/CxxWrap.jl">CxxWrap.jl</a>/<a href="https://github.com/JuliaInterop/libcxxwrap-julia">libcxxwrap</a>) is needed before C++ libraries can be used from Julia. A CxxWrap wrapper will depend on the OpenSim libraries, and all transitive dependencies must also be present/installable from the package registry. So in the process of wrapping OpenSim, jll’s for all transitive dependencies must exist as well. Furthermore, OpenSim heavily uses and exposes the Simbody API, so a prerequisite for a complete wrapper of OpenSim is a wrapper for Simbody.</p>
+<p>The Julia package manager and package ecosystem makes it easy to install binary dependencies (e.g.&nbsp;shared C libraries, etc.) known as <code>jll</code>s<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>, and Julia can directly call C API functions. However, Julia cannot call/use C++ libraries directly, so a wrapper (using <a href="https://github.com/JuliaInterop/CxxWrap.jl">CxxWrap.jl</a>/<a href="https://github.com/JuliaInterop/libcxxwrap-julia">libcxxwrap</a>) is needed before C++ libraries can be used from Julia. A wrapper library will depend on the OpenSim libraries and, in turn, all transitive dependencies. So in the process of wrapping OpenSim, jll’s for all transitive dependencies must exist as well. Furthermore, OpenSim heavily uses and exposes the Simbody API, so a prerequisite for a complete wrapper of OpenSim is a wrapper for Simbody.</p>
 <div class="column-body-outset">
 <div class="cell" data-fig-height="2" data-fig-width="9" data-layout-align="default">
 <div class="cell-output-display">
@@ -570,30 +572,30 @@ ul.task-list li input[type="checkbox"] {
 </g>
 </svg>
 </div>
-<p></p><figcaption> jll and wrapper prerequisites to implement OpenSim.jl<br> ✅: Finished<br> ☑️: Basically finished, may need modification/adaptation<br> 🚧: In progress<br> *Parts of Colpack that OpenSim relies on are disabled in the <a href="https://github.com/michel2323/ColPack/pull/1">ColPack_jll build recipe</a> </figcaption> </figure><p></p>
+<p></p><figcaption> jll and wrapper prerequisites to implement OpenSim.jl<br> ✅: Finished/Already exists<br> ☑️: Basically finished, may need modification/adaptation<br> 🚧: In progress<br> *Parts of Colpack that OpenSim relies on are disabled in the <a href="https://github.com/michel2323/ColPack/pull/1">ColPack_jll build recipe</a> </figcaption> </figure><p></p>
 </div>
 </div>
 </div>
 </div>
 <p>There are 4 major sub-projects, but the purpose and goals have parallels:</p>
 <ul>
-<li>jlsimbody_jll/jlopensim_jll: C++ based wrappers that make the Simbody and OpenSim API usable from Julia using CxxWrap.
+<li><code>jlsimbody_jll</code>/<code>jlopensim_jll</code>: C++ based wrappers that make the Simbody and OpenSim API usable from Julia using CxxWrap.
 <ul>
 <li>Goals (short and long-term):
 <ul>
 <li>Completely wrap the API for access from Julia</li>
-<li>Long-term: Add the ability to extend Simbody/OpenSim types and functionality from Julia</li>
+<li>(long-term) Add the ability to extend Simbody/OpenSim types and functionality from Julia</li>
 </ul></li>
 <li>Limitations:
 <ul>
 <li>Simbody visualizer will not be (directly) wrapped. The OpenGL libraries that Simbody visualizer depends on have not been added to the Julia Pkg registry; I’m assuming there is a good reason for this absence. I plan on exploring the feasibility of implement a Julia version of the Simbody visualizer.</li>
 </ul></li>
 </ul></li>
-<li>Simbody.jl/OpenSim.jl: The Julia side interface to the Simbody/OpenSim API.
+<li><code>Simbody.jl</code>/<code>OpenSim.jl</code>: The Julia side interface to the Simbody/OpenSim API.
 <ul>
 <li>Goals:
 <ul>
-<li>Adapt C++ “OOP” approach to better fit Julian<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> multiple-dispatch</li>
+<li>Adapt C++ “OOP” approach to better match idiomatic Julian<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> code (e.g.&nbsp;multiple-dispatch, etc)</li>
 <li>Incorporate Julian syntactic sugar (e.g.&nbsp;<code>getindex</code>/<code>setindex!</code> using brackets, <code>getproperty</code>/<code>setproperty</code> using dot access, etc)</li>
 <li>Add pretty-printing <code>show</code> methods where appropriate to faciliate interactive development</li>
 <li>Documentation!
@@ -604,8 +606,9 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 </ul></li>
 </ul>
-<section id="current-project-status" class="level3">
-<h3 class="anchored" data-anchor-id="current-project-status">Current project status:</h3>
+</section>
+<section id="project-status-as-of-october-24" class="level2">
+<h2 class="anchored" data-anchor-id="project-status-as-of-october-24">Project status (as of October, ’24)</h2>
 <ul>
 <li>☑️ simbody_jll
 <ul>
@@ -651,14 +654,13 @@ ul.task-list li input[type="checkbox"] {
 </ol></li>
 <li><label><input type="checkbox">opensim_jll: Not started</label>
 <ul>
-<li>The build dependency handling in the OpenSim CMake build system is outdated and inconvenient to build. PR’s to refactor the CMake configuration are planned.</li>
+<li>The build dependency handling in the OpenSim CMake build system is overly complex, out-of-step with modern CMake style/practices, and inconvenient to use. PR’s to refactor the CMake configuration are planned.</li>
 </ul></li>
 <li><label><input type="checkbox">jlopensim/jll: Not started</label></li>
 <li><label><input type="checkbox">OpenSim.jl: Not started</label></li>
 </ul>
 
 
-</section>
 </section>
 
 

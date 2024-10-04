@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://halleysfifthinc.github.io/projects/opensim-simbody-julia/index.html</loc>
+    <lastmod>2024-10-04T20:34:47.249Z</lastmod>
+  </url>
+  <url>
     <loc>https://halleysfifthinc.github.io/projects/peaks.jl/index.html</loc>
     <lastmod>2024-10-02T22:10:24.256Z</lastmod>
   </url>
@@ -30,7 +34,7 @@
   </url>
   <url>
     <loc>https://halleysfifthinc.github.io/projects.html</loc>
-    <lastmod>2024-10-02T22:10:24.254Z</lastmod>
+    <lastmod>2024-10-04T20:19:27.812Z</lastmod>
   </url>
   <url>
     <loc>https://halleysfifthinc.github.io/posts.html</loc>
@@ -70,6 +74,6 @@
   </url>
   <url>
     <loc>https://halleysfifthinc.github.io/projects/c3d.jl/index.html</loc>
-    <lastmod>2024-10-02T22:10:24.255Z</lastmod>
+    <lastmod>2024-10-04T20:27:18.970Z</lastmod>
   </url>
 </urlset>

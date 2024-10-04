@@ -18,6 +18,7 @@
   {
     "listing": "/projects.html",
     "items": [
+      "/projects/opensim-simbody-julia/index.html",
       "/projects/c3d.jl/index.html",
       "/projects/peaks.jl/index.html"
     ]
