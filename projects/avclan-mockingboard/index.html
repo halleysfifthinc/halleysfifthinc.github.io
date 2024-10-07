@@ -68,6 +68,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<!-- Cloudflare Web Analytics --><script defer="" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;: &quot;855607fd469d4124919f459ed7c876a4&quot;}"></script><!-- End Cloudflare Web Analytics -->
 <meta name="quarto:status" content="draft">
 
 
@@ -180,15 +181,15 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>I have an early 2000’s era Toyota Camry which sadly lacks an auxiliary audio port. Two common devices that retrofit aux ports are cassette tape adapters and mini-FM transmitters. Both options would work<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, but they have functional and/or audio quality trade-offs that I’m not a fan of. A third option is to replace the stereo head-unit, but I didn’t want to disrupt the aesthetics of the original center console.</p>
-<p>Another option is that the original head-units for some (many?) older vehicles support an external CD changer. These devices would allow multiple CD’s to be played without needing to eject and re-insert a new/different CD. It turns out that (at least for Toyota’s head-unit) the audio DAC is internal to the external CD changer, and, for all intents and purposes, the only connection between the head-unit and CD changer is a pair of balanced L/R audio channels and a communication channel.</p>
-<p>This means that there is theoretically a way to feed an audio signal to the stock head-unit, as long as we can convince the head-unit to route the audio to the speakers. 🤔</p>
-<div class="page-columns page-full"><p> I must admit that there are commercially available aux input adapters that work under this principle, but I thought “Why buy something I could make myself!”</p><div class="no-row-height column-margin column-container"><span class="margin-aside">🙄 Classic. Of course, this way is more fun (but definitely not cheaper)</span></div></div>
+<p>Yet another option is that the original head-units for some (many?) older vehicles support an external CD changer. These devices would allow multiple CD’s to be played without needing to eject and re-insert a new/different CD. It turns out that (at least for Toyota’s head-unit) the audio D/A conversion happens within the external CD changer, and, basically the only connection between the head-unit and CD changer is a pair of balanced L/R audio channels and a communication channel.</p>
+<p>This means that there is theoretically a way to feed an audio signal to the stock head-unit, as long as we can communicate with the head-unit and get it to route that audio to the speakers. 🤔</p>
+<div class="page-columns page-full"><p> I must admit that there are commercially available aux input adapters that work under this principle, but I thought “Why buy something I could make myself!”</p><div class="no-row-height column-margin column-container"><span class="margin-aside">🙄 Classic. Of course, this way is more fun (but rarely cheaper)</span></div></div>
 <section id="project-summary-and-goals" class="level2">
 <h2 class="anchored" data-anchor-id="project-summary-and-goals">Project summary and goals</h2>
 </section>
 <section id="alpha-version-summer-of-2015" class="level2">
 <h2 class="anchored" data-anchor-id="alpha-version-summer-of-2015">Alpha version; Summer of 2015</h2>
-<p>The alpha version electronics was assembled on a breadboard Arduino hat and lightly adapted<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> from previous schematics/code from <a href="https://web.archive.org/web/20211022194051/http://www.softservice.com.pl/corolla/avc/simpleaux.php">Marcin at softservice.com.pl</a>. Unfortunately my Arduino was needed for a school project that fall, and I was forced to dissasemble that incarnation. I used a cassette adaptor for the next 8 years until I finally got fed up with the incessant clicking of the (pointless) winding of the cassette.</p>
+<p>The alpha version electronics was assembled on a breadboard Arduino hat and lightly adapted<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> from previous schematics/code from <a href="https://web.archive.org/web/20211022194051/http://www.softservice.com.pl/corolla/avc/simpleaux.php">Marcin at softservice.com.pl</a>. Unfortunately I needed my Arduino for a school project that fall, and I never rebuilt the device after the school project was finished. I used a cassette adaptor for the next 8 years until I finally got fed up with the poor audio quality and incessant clicking of the cassette winding mechanism.</p>
 </section>
 <section id="beta-version-summer-of-2023" class="level2">
 <h2 class="anchored" data-anchor-id="beta-version-summer-of-2023">Beta version; Summer of 2023</h2>
@@ -202,7 +203,7 @@ ul.task-list li input[type="checkbox"] {
 
 <ol>
 <li id="fn1"><p>Yes, my car is old enough to have a cassette tape deck.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>Changes were needed for Marcin’s Atmega8 based code to run on the faster clocked Atmega328 that early Arduino’s were based on.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Changes were needed for Marcin’s Atmega8 based code to run on the faster clocked Atmega328 that many Arduino’s are based on.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
