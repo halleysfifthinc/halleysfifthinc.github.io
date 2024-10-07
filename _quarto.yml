@@ -39,3 +39,4 @@ format:
     fontsize: 1.2rem
     # Enable banner style title blocks
     title-block-banner: false
+    include-in-header: cloudflare-analytics.html
