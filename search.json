@@ -95,7 +95,7 @@
     "href": "projects.html",
     "title": "Projects",
     "section": "",
-    "text": "OpenSim.jl and friends\n\n\nUsing OpenSim in Julia\n\n\n\nFeb, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nC3D.jl\n\n\n \n\n\nRead and write .c3d files with Julia\n\n\n\nJun, 2018\n\n\n\n\n\n\n\n\n\n\n\n\nPeaks.jl\n\n\n  \n\n\nFind peaks (local extrema) of signals\n\n\n\nMar, 2018\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "OpenSim.jl and friends\n\n\nUsing OpenSim in Julia\n\n\n\nFeb, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nC3D.jl\n\n\n \n\n\nRead and write .c3d files with Julia\n\n\n\nJun, 2018\n\n\n\n\n\n\n\n\n\n\n\n\nPeaks.jl\n\n\n  \n\n\nFind peaks (local extrema) of signals\n\n\n\nMar, 2018\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAVCLAN Mockingboard\n\n\n\n\n\nAdd an aux audio port to older Toyota’s by emulating a CD Changer\n\n\n\nAug, 2015\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts.html",
@@ -152,6 +152,27 @@
     "title": "Using Caddy as a WebDAV server for Zotero",
     "section": "Footnotes",
     "text": "Footnotes\n\n\nThe paid cloud storage tiers are the source of nearly all of the funding for the Zotero project, but I have a limited budget as a grad student. Please consider paying for storage if you have the means.↩︎\nThis is generally a bad idea. Things can get out of whack if you have Zotero open on multiple devices at the same time and are making changes in Zotero (e.g. adding a reference) on both devices.↩︎\nApache also supports automatic HTTPS, but it is not enabled by default (at the time of setup in the default Arch Linux install; circa fall 2022). However, Caddy’s support for automatic HTTPS is potentially irrelevant to the final server setup.↩︎\nWhen I tried the Caddy downloads page, my build/download requests kept timing out for the platform (ARM 7) and modules I had selected.↩︎\nMake it a strong password! I recommend using a password manager like KeePassXC.↩︎\nThis command asks the server for the properties of the files under /location/of/your/files. The response will be empty if there are no files there, and otherwise will return an XML object for each file. The exact response doesn’t matter, as long as the command shows a successful connection/200 status.↩︎\nMy intuition is that this is not necessary or helpful from a security perspective; you probably have bigger problems if an attacker is able to eavesdrop on traffic internal to your server.↩︎"
+  },
+  {
+    "objectID": "projects/avclan-mockingboard/index.html",
+    "href": "projects/avclan-mockingboard/index.html",
+    "title": "AVCLAN Mockingboard",
+    "section": "",
+    "text": "I have an early 2000’s era Toyota Camry which sadly lacks an auxiliary audio port. Two common devices that retrofit aux ports are cassette tape adapters and mini-FM transmitters. Both options would work1, but they have functional and/or audio quality trade-offs that I’m not a fan of. A third option is to replace the stereo head-unit, but I didn’t want to disrupt the aesthetics of the original center console.\nYet another option is that the original head-units for some (many?) older vehicles support an external CD changer. These devices would allow multiple CD’s to be played without needing to eject and re-insert a new/different CD. It turns out that (at least for Toyota’s head-unit) the audio D/A conversion happens within the external CD changer, and, basically the only connection between the head-unit and CD changer is a pair of balanced L/R audio channels and a proprietary communication bus called “AVC LAN”.\nThis means that there is theoretically a way to feed an audio signal to the stock head-unit, as long as we can communicate with the head-unit and get it to route that audio to the speakers. 🤔"
+  },
+  {
+    "objectID": "projects/avclan-mockingboard/index.html#project-summary",
+    "href": "projects/avclan-mockingboard/index.html#project-summary",
+    "title": "AVCLAN Mockingboard",
+    "section": "Project summary",
+    "text": "Project summary\n\nHardware\nThe Mockingboard device uses a modern Microchip microcontroller (tinyAVR 1-series) on a custom PCB. A Dsub9 connector carries the audio lines, AVCLAN bus, and power between the device and head-unit. A TRRS headphone jack provides audio input, and an analog switch allows the microcontroller to react to head-unit button presses and trigger the play/pause/next media control from a headset (not implemented yet). A serial UART connector is present to communicate with the Mockingboard, and it is programmed using Micochip’s UPDI protocol.\n\n\nSoftware\nThe microcontroller firmware is written in C. By default, all messages from the AVCLAN bus are echo’ed over serial, optionally in binary (vs. human readable hex) to reduce cycles spent communicating over serial vs listening/responding on the AVCLAN bus. A Wireshark plugin (written in Lua) allows the echo’ed AVCLAN bus messages to be captured and analyzed in real-time to assist with debugging and reverse-engineering the protocol."
+  },
+  {
+    "objectID": "projects/avclan-mockingboard/index.html#footnotes",
+    "href": "projects/avclan-mockingboard/index.html#footnotes",
+    "title": "AVCLAN Mockingboard",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nYes, my car is old enough to have a cassette tape deck.↩︎"
   },
   {
     "objectID": "publications/baileyEffectsArmSwing2022.html",

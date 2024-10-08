@@ -69,7 +69,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <!-- Cloudflare Web Analytics --><script defer="" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;: &quot;855607fd469d4124919f459ed7c876a4&quot;}"></script><!-- End Cloudflare Web Analytics -->
-<meta name="quarto:status" content="draft">
 
 
 </head>
@@ -77,7 +76,7 @@ ul.task-list li input[type="checkbox"] {
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><div id="quarto-draft-alert" class="alert alert-warning"><i class="bi bi-pencil-square"></i>Draft</div>
+  <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -181,21 +180,21 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>I have an early 2000’s era Toyota Camry which sadly lacks an auxiliary audio port. Two common devices that retrofit aux ports are cassette tape adapters and mini-FM transmitters. Both options would work<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, but they have functional and/or audio quality trade-offs that I’m not a fan of. A third option is to replace the stereo head-unit, but I didn’t want to disrupt the aesthetics of the original center console.</p>
-<p>Yet another option is that the original head-units for some (many?) older vehicles support an external CD changer. These devices would allow multiple CD’s to be played without needing to eject and re-insert a new/different CD. It turns out that (at least for Toyota’s head-unit) the audio D/A conversion happens within the external CD changer, and, basically the only connection between the head-unit and CD changer is a pair of balanced L/R audio channels and a communication channel.</p>
+<p>Yet another option is that the original head-units for some (many?) older vehicles support an external CD changer. These devices would allow multiple CD’s to be played without needing to eject and re-insert a new/different CD. It turns out that (at least for Toyota’s head-unit) the audio D/A conversion happens within the external CD changer, and, basically the only connection between the head-unit and CD changer is a pair of balanced L/R audio channels and a proprietary communication bus called “AVC LAN”.</p>
 <p>This means that there is theoretically a way to feed an audio signal to the stock head-unit, as long as we can communicate with the head-unit and get it to route that audio to the speakers. 🤔</p>
 <div class="page-columns page-full"><p> I must admit that there are commercially available aux input adapters that work under this principle, but I thought “Why buy something I could make myself!”</p><div class="no-row-height column-margin column-container"><span class="margin-aside">🙄 Classic. Of course, this way is more fun (but rarely cheaper)</span></div></div>
-<section id="project-summary-and-goals" class="level2">
-<h2 class="anchored" data-anchor-id="project-summary-and-goals">Project summary and goals</h2>
+<section id="project-summary" class="level2">
+<h2 class="anchored" data-anchor-id="project-summary">Project summary</h2>
+<section id="hardware" class="level3">
+<h3 class="anchored" data-anchor-id="hardware">Hardware</h3>
+<p>The Mockingboard device uses a modern Microchip microcontroller (tinyAVR 1-series) on a custom PCB. A Dsub9 connector carries the audio lines, AVCLAN bus, and power between the device and head-unit. A TRRS headphone jack provides audio input, and an analog switch allows the microcontroller to react to head-unit button presses and trigger the <a href="https://source.android.com/docs/core/interaction/accessories/headset/plug-headset-spec">play/pause/next media control</a> from a headset (not implemented yet). A serial UART connector is present to communicate with the Mockingboard, and it is programmed using Micochip’s UPDI protocol.</p>
 </section>
-<section id="alpha-version-summer-of-2015" class="level2">
-<h2 class="anchored" data-anchor-id="alpha-version-summer-of-2015">Alpha version; Summer of 2015</h2>
-<p>The alpha version electronics was assembled on a breadboard Arduino hat and lightly adapted<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> from previous schematics/code from <a href="https://web.archive.org/web/20211022194051/http://www.softservice.com.pl/corolla/avc/simpleaux.php">Marcin at softservice.com.pl</a>. Unfortunately I needed my Arduino for a school project that fall, and I never rebuilt the device after the school project was finished. I used a cassette adaptor for the next 8 years until I finally got fed up with the poor audio quality and incessant clicking of the cassette winding mechanism.</p>
-</section>
-<section id="beta-version-summer-of-2023" class="level2">
-<h2 class="anchored" data-anchor-id="beta-version-summer-of-2023">Beta version; Summer of 2023</h2>
-<p>Coming back to the project, I didn’t understand any of the old code and decided that a full rewrite and thorough documentation.</p>
+<section id="software" class="level3">
+<h3 class="anchored" data-anchor-id="software">Software</h3>
+<p>The microcontroller firmware is written in C. By default, all messages from the AVCLAN bus are echo’ed over serial, optionally in binary (vs.&nbsp;human readable hex) to reduce cycles spent communicating over serial vs listening/responding on the AVCLAN bus. A Wireshark plugin (written in Lua) allows the echo’ed AVCLAN bus messages to be captured and analyzed in real-time to assist with debugging and reverse-engineering the protocol.</p>
 
 
+</section>
 </section>
 
 
@@ -203,7 +202,6 @@ ul.task-list li input[type="checkbox"] {
 
 <ol>
 <li id="fn1"><p>Yes, my car is old enough to have a cassette tape deck.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>Changes were needed for Marcin’s Atmega8 based code to run on the faster clocked Atmega328 that many Arduino’s are based on.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
