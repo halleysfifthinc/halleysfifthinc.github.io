@@ -1,0 +1,35 @@
+---
+title: "AVCLAN Mockingboard"
+subtitle: "![](https://img.shields.io/github/stars/halleysfifthinc/AVCLAN-Mockingboard)"
+description: "Add an aux audio port to older Toyota's by emulating a CD Changer"
+image: pcbv1.png
+date: Aug 2015
+date-modified: Sep 2023
+categories: [electronics, "embedded C"]
+format:
+  html:
+    fig-height: 3.5
+    code-tools:
+      source: https://github.com/halleysfifthinc/AVCLAN-Mockingboard
+---
+
+I have an early 2000's era Toyota Camry which sadly lacks an auxiliary audio port. Two common devices that retrofit aux ports are cassette tape adapters and mini-FM transmitters. Both options would work[^tape], but they have functional and/or audio quality trade-offs that I'm not a fan of. A third option is to replace the stereo head-unit, but I didn't want to disrupt the aesthetics of the original center console.
+
+[^tape]: Yes, my car is old enough to have a cassette tape deck.
+
+Yet another option is that the original head-units for some (many?) older vehicles  support an external CD changer. These devices would allow multiple CD's to be played without needing to eject and re-insert a new/different CD. It turns out that (at least for Toyota's head-unit) the audio D/A conversion happens within the external CD changer, and, basically the only connection between the head-unit and CD changer is a pair of balanced L/R audio channels and a proprietary communication bus called "AVC LAN".
+
+This means that there is theoretically a way to feed an audio signal to the stock head-unit, as long as we can communicate with the head-unit and get it to route that audio to the speakers. 🤔
+
+[🙄 Classic. Of course, this way is more fun (but rarely cheaper)]{.aside}
+I must admit that there are commercially available aux input adapters that work under this principle, but I thought "Why buy something I could make myself!"
+
+## Project summary
+
+### Hardware
+
+The Mockingboard device uses a modern Microchip microcontroller (tinyAVR 1-series) on a custom PCB. A Dsub9 connector carries the audio lines, AVCLAN bus, and power between the device and head-unit. A TRRS headphone jack provides audio input, and an analog switch allows the microcontroller to react to head-unit button presses and trigger the [play/pause/next media control](https://source.android.com/docs/core/interaction/accessories/headset/plug-headset-spec) from a headset (not implemented yet). A serial UART connector is present to communicate with the Mockingboard, and it is programmed using Micochip's UPDI protocol.
+
+### Software
+
+The microcontroller firmware is written in C. By default, all messages from the AVCLAN bus are echo'ed over serial, optionally in binary (vs. human readable hex) to reduce cycles spent communicating over serial vs listening/responding on the AVCLAN bus. A Wireshark plugin (written in Lua) allows the echo'ed AVCLAN bus messages to be captured and analyzed in real-time to assist with debugging and reverse-engineering the protocol.
