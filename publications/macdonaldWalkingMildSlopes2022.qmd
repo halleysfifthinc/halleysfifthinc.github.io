@@ -73,5 +73,6 @@ citation:
   URL: >-
     https://www.frontiersin.org/journals/sports-and-active-living/articles/10.3389/fspor.2021.805147/full
   volume: '3'
+  page: '805147'
 ---
 

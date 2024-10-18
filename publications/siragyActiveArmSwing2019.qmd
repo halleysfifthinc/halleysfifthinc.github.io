@@ -62,6 +62,7 @@ citation:
   DOI: 10.1016/j.jbiomech.2019.109529
   ISSN: 0021-9290
   language: en
+  volume: '99'
   page: '109529'
   source: ScienceDirect
   type: article-journal
