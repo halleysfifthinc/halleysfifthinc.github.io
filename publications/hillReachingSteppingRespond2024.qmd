@@ -11,11 +11,10 @@ format:
         icon: journal-code
         href: https://doi.org/10.5281/zenodo.10685595
         rel: external
-include-before-body: in-press.html
 title: >-
   Reaching and stepping respond differently to medication and cueing in
   Parkinson’s disease
-date: "2024/10/9"
+date: 2024/10/18
 abstract: >-
   The basal ganglia contribute to internal timekeeping, and dopaminergic
   medication has been observed to moderate timing deficits associated with
@@ -99,13 +98,16 @@ author:
         url: https://www.uottawa.ca
 license: CC BY-NC-ND
 citation:
+  type: article-journal
   citation-key: hillReachingSteppingRespond2024
   container-title: Scientific Reports
   container-title-short: Sci Rep
-  doi: 10.1038/s41598-024-72751-y
-  ISSN: 2045-2322
-  volume: "In press."
+  doi: "10.1038/s41598-024-72751-y"
+  ISSN: "2045-2322"
+  issue: '1'
+  page: '24461'
+  publisher: Nature Publishing Group
+  volume: '14'
   language: en
   source: www.nature.com
-  type: article-journal
 ---
