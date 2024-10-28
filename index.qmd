@@ -9,12 +9,12 @@ about:
     - icon: twitter
       text: Twitter
       href: https://twitter.com/allenofthehills
-    - text: Bluesky
+    - text: "{{< fa brands bluesky >}} Bluesky"
       href: https://bsky.app/profile/halleysfifthinc.dev
     - icon: linkedin
       text: LinkedIn
       href: https://www.linkedin.com/in/allenofthehills/
-    - text: Google Scholar
+    - text: "{{< fa brands google-scholar >}} Google Scholar"
       href: https://scholar.google.com/citations?user=AnaibLAAAAAJ
     - icon: github
       text: Github

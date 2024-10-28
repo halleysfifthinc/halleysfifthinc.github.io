@@ -26,8 +26,7 @@ website:
         href: https://github.com/halleysfifthinc
       - icon: twitter
         href: https://twitter.com/allenofthehills
-      - icon: bluesky
-        text: Bsky
+      - text: "{{< fa brands bluesky >}}"
         href: https://bsky.app/profile/halleysfifthinc.dev
 
 format:
