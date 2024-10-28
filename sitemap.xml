@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://halleysfifthinc.github.io/projects/opensim-simbody-julia/index.html</loc>
-    <lastmod>2024-10-04T20:34:47.249Z</lastmod>
+    <loc>https://halleysfifthinc.github.io/publications/siragyRecoveryDynamicStability2021.html</loc>
+    <lastmod>2024-10-02T22:10:24.259Z</lastmod>
+  </url>
+  <url>
+    <loc>https://halleysfifthinc.github.io/publications/macdonaldWalkingMildSlopes2022.html</loc>
+    <lastmod>2024-10-18T18:43:29.851Z</lastmod>
+  </url>
+  <url>
+    <loc>https://halleysfifthinc.github.io/publications/hillSensitivityDiscreteSymmetry2022.html</loc>
+    <lastmod>2024-10-02T22:10:24.258Z</lastmod>
+  </url>
+  <url>
+    <loc>https://halleysfifthinc.github.io/publications/hillInterlimbCoordinationParkinsons2024.html</loc>
+    <lastmod>2024-10-18T18:43:38.314Z</lastmod>
+  </url>
+  <url>
+    <loc>https://halleysfifthinc.github.io/publications/gholizadehEffectVariousArm2019.html</loc>
+    <lastmod>2024-10-02T22:10:24.257Z</lastmod>
+  </url>
+  <url>
+    <loc>https://halleysfifthinc.github.io/publications/baileyEffectsArmSwing2022.html</loc>
+    <lastmod>2024-10-02T22:10:24.257Z</lastmod>
   </url>
   <url>
     <loc>https://halleysfifthinc.github.io/projects/peaks.jl/index.html</loc>
     <lastmod>2024-10-02T22:10:24.256Z</lastmod>
   </url>
   <url>
-    <loc>https://halleysfifthinc.github.io/publications/siragyActiveArmSwing2019.html</loc>
-    <lastmod>2024-10-18T18:46:01.178Z</lastmod>
-  </url>
-  <url>
-    <loc>https://halleysfifthinc.github.io/publications/jehuMedicationTrialDuration2018.html</loc>
-    <lastmod>2024-10-02T22:10:24.258Z</lastmod>
-  </url>
-  <url>
-    <loc>https://halleysfifthinc.github.io/publications/hillReachingSteppingRespond2024.html</loc>
-    <lastmod>2024-10-18T18:13:44.482Z</lastmod>
-  </url>
-  <url>
-    <loc>https://halleysfifthinc.github.io/publications/hillEffectsArmSwing2019.html</loc>
-    <lastmod>2024-10-02T22:10:24.257Z</lastmod>
-  </url>
-  <url>
-    <loc>https://halleysfifthinc.github.io/publications/gholizadehEffectArmMotion2019.html</loc>
-    <lastmod>2024-10-02T22:10:24.257Z</lastmod>
-  </url>
-  <url>
-    <loc>https://halleysfifthinc.github.io/publications.html</loc>
-    <lastmod>2024-10-02T22:10:24.256Z</lastmod>
+    <loc>https://halleysfifthinc.github.io/projects/c3d.jl/index.html</loc>
+    <lastmod>2024-10-04T20:27:18.970Z</lastmod>
   </url>
   <url>
     <loc>https://halleysfifthinc.github.io/projects.html</loc>
@@ -42,7 +42,7 @@
   </url>
   <url>
     <loc>https://halleysfifthinc.github.io/index.html</loc>
-    <lastmod>2024-10-07T21:54:11.246Z</lastmod>
+    <lastmod>2024-10-28T17:39:28.531Z</lastmod>
   </url>
   <url>
     <loc>https://halleysfifthinc.github.io/posts/zotero-webdav/index.html</loc>
@@ -53,31 +53,31 @@
     <lastmod>2024-10-08T20:40:49.770Z</lastmod>
   </url>
   <url>
-    <loc>https://halleysfifthinc.github.io/publications/baileyEffectsArmSwing2022.html</loc>
+    <loc>https://halleysfifthinc.github.io/projects/opensim-simbody-julia/index.html</loc>
+    <lastmod>2024-10-04T20:34:47.249Z</lastmod>
+  </url>
+  <url>
+    <loc>https://halleysfifthinc.github.io/publications.html</loc>
+    <lastmod>2024-10-02T22:10:24.256Z</lastmod>
+  </url>
+  <url>
+    <loc>https://halleysfifthinc.github.io/publications/gholizadehEffectArmMotion2019.html</loc>
     <lastmod>2024-10-02T22:10:24.257Z</lastmod>
   </url>
   <url>
-    <loc>https://halleysfifthinc.github.io/publications/gholizadehEffectVariousArm2019.html</loc>
+    <loc>https://halleysfifthinc.github.io/publications/hillEffectsArmSwing2019.html</loc>
     <lastmod>2024-10-02T22:10:24.257Z</lastmod>
   </url>
   <url>
-    <loc>https://halleysfifthinc.github.io/publications/hillInterlimbCoordinationParkinsons2024.html</loc>
-    <lastmod>2024-10-18T18:43:38.314Z</lastmod>
+    <loc>https://halleysfifthinc.github.io/publications/hillReachingSteppingRespond2024.html</loc>
+    <lastmod>2024-10-18T18:13:44.482Z</lastmod>
   </url>
   <url>
-    <loc>https://halleysfifthinc.github.io/publications/hillSensitivityDiscreteSymmetry2022.html</loc>
+    <loc>https://halleysfifthinc.github.io/publications/jehuMedicationTrialDuration2018.html</loc>
     <lastmod>2024-10-02T22:10:24.258Z</lastmod>
   </url>
   <url>
-    <loc>https://halleysfifthinc.github.io/publications/macdonaldWalkingMildSlopes2022.html</loc>
-    <lastmod>2024-10-18T18:43:29.851Z</lastmod>
-  </url>
-  <url>
-    <loc>https://halleysfifthinc.github.io/publications/siragyRecoveryDynamicStability2021.html</loc>
-    <lastmod>2024-10-02T22:10:24.259Z</lastmod>
-  </url>
-  <url>
-    <loc>https://halleysfifthinc.github.io/projects/c3d.jl/index.html</loc>
-    <lastmod>2024-10-04T20:27:18.970Z</lastmod>
+    <loc>https://halleysfifthinc.github.io/publications/siragyActiveArmSwing2019.html</loc>
+    <lastmod>2024-10-18T18:46:01.178Z</lastmod>
   </url>
 </urlset>
