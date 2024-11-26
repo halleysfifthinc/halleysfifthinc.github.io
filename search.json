@@ -46,7 +46,7 @@
     "href": "projects/peaks.jl/index.html",
     "title": "Peaks.jl",
     "section": "",
-    "text": "Peaks.jl is a library for finding peaks (i.e. local maxima and minima) and peak characteristics (e.g. prominence, width, etc) in vector (1D) data signals.\nPeak finding has been a foundational analytical step in every analysis during my graduate studies. When I started exclusively using Julia in 2018, there was no package or functionality that met my needs, such as:\n\nFinding peaks in non-continuous data (i.e. sections of NaN or missing data)\nFinding peaks for windows wider than the two directly adjacent elements\nFinding peak prominence and/or width\n\nPeaks.jl is the product of my efforts to implement similar peak finding capabilities as I depended on in MATLAB. Peaks.jl is extensively tested and has features to:\n\nFind peak (maxima or minima) locations, height, prominence, and width\n\nFilter peaks by peak spacing (window size), height, prominence, and width (including “Full Width Half Maximum (FWHM)”)\n\nFully supports NaN/missing with optional tolerance using keyword arg strict:\n\nConventional handling/propagation of NaN/missing when strict = true (the default)\nReasonable alternatives when strict = false\n\nAn alternative, SIMD-accelerated, fast peak finding method (with a reduced feature set compared to the standard method)"
+    "text": "Precompiling Peaks\n  ✓ SIMD\n  ✓ Peaks\n  2 dependencies successfully precompiled in 6 seconds. 3 already precompiled.\n\n\n\n\n\n\n\n\n\nPeaks.jl is a library for finding peaks (i.e. local maxima and minima) and peak characteristics (e.g. prominence, width, etc) in vector (1D) data signals.\nPeak finding has been a foundational analytical step in every analysis during my graduate studies. When I started exclusively using Julia in 2018, there was no package or functionality that met my needs, such as:\n\nFinding peaks in non-continuous data (i.e. sections of NaN or missing data)\nFinding peaks for windows wider than the two directly adjacent elements\nFinding peak prominence and/or width\n\nPeaks.jl is the product of my efforts to implement similar peak finding capabilities as I depended on in MATLAB. Peaks.jl is extensively tested and has features to:\n\nFind peak (maxima or minima) locations, height, prominence, and width\n\nFilter peaks by peak spacing (window size), height, prominence, and width (including “Full Width Half Maximum (FWHM)”)\n\nFully supports NaN/missing with optional tolerance using keyword arg strict:\n\nConventional handling/propagation of NaN/missing when strict = true (the default)\nReasonable alternatives when strict = false\n\nAn alternative, SIMD-accelerated, fast peak finding method (with a reduced feature set compared to the standard method)"
   },
   {
     "objectID": "projects/c3d.jl/index.html",
@@ -74,14 +74,14 @@
     "href": "index.html",
     "title": "About",
     "section": "",
-    "text": "Hi, I’m Allen. I’m currently finishing my PhD in Human Kinetics (biomechanics) at the University of Ottawa. I’m passionate about developing rigorous methods, and improving user/developer/researcher experiences and productivity by making new tools or smoothing rough edges in existing tools. I’d like to continue working with biosignals/physiological data after finishing my PhD.\nIn my free time, I love reading scifi/fantasy, running, mountain biking, and woodworking."
+    "text": "Hi, I’m Allen. I’ve recently finished my PhD in Human Kinetics (biomechanics) at the University of Ottawa. I’m passionate about developing rigorous methods, and improving user/developer/researcher experiences and productivity by making new tools or smoothing rough edges in existing tools. I’m interested in continuing to work with biosignals/physiological data.\nIn my free time, I love reading scifi/fantasy, running, mountain biking, and woodworking."
   },
   {
     "objectID": "index.html#education",
     "href": "index.html#education",
     "title": "About",
     "section": "Education:",
-    "text": "Education:\n\nUniversity of Ottawa | Ottawa, CA Human Kinetics PhD | 2018 - 2024 (expected)\nLeTourneau University | Longview, TX Engineering, biomedical conc. BS; summa cum laude with honors | 2012 - 2016"
+    "text": "Education:\n\nUniversity of Ottawa | Ottawa, CA Human Kinetics PhD | 2018 - 2024\nLeTourneau University | Longview, TX Engineering, biomedical conc. BS; summa cum laude with honors | 2012 - 2016"
   },
   {
     "objectID": "posts/zotero-webdav/index.html",
