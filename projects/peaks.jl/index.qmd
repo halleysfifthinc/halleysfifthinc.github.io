@@ -11,7 +11,7 @@ author: "Allen Hill"
 date: Mar 2018
 date-format: "MMM YYYY"
 categories: [code, julia]
-jupyter: julia-sysimage-1.10
+jupyter: julia-1.10
 execute:
   cache: true
 ---
