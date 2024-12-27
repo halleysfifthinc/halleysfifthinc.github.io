@@ -6,29 +6,29 @@ image-height: 700px
 about:
   template: broadside
   links:
-    - icon: twitter
-      text: Twitter
-      href: https://twitter.com/allenofthehills
     - text: "{{< fa brands bluesky >}} Bluesky"
       href: https://bsky.app/profile/halleysfifthinc.dev
+    - icon: github
+      text: Github
+      href: https://github.com/halleysfifthinc
     - icon: linkedin
       text: LinkedIn
       href: https://www.linkedin.com/in/allenofthehills/
     - text: "{{< fa brands google-scholar >}} Google Scholar"
       href: https://scholar.google.com/citations?user=AnaibLAAAAAJ
-    - icon: github
-      text: Github
-      href: https://github.com/halleysfifthinc
-
 ---
 
-Hi, I'm Allen. I'm currently finishing my PhD in Human Kinetics (biomechanics) at the University of Ottawa. I'm passionate about developing rigorous methods, and improving user/developer/researcher experiences and productivity by making new tools or smoothing rough edges in existing tools. I'd like to continue working with biosignals/physiological data after finishing my PhD.
+Hi, I'm Allen. I've recently finished my PhD in Human Kinetics (biomechanics) at the
+University of Ottawa. I'm passionate about developing rigorous methods, and improving
+user/developer/researcher experiences and productivity by making new tools or smoothing
+rough edges in existing tools. I'm interested in continuing to work with
+biosignals/physiological data.
 
 In my free time, I love reading scifi/fantasy, running, mountain biking, and woodworking.
 
 ## Education:
 
 - **University of Ottawa** | Ottawa, CA`<br/>`{=html}
-  Human Kinetics PhD | 2018 - 2024 (expected)
+  Human Kinetics PhD | 2018 - 2024
 - **LeTourneau University** | Longview, TX`<br/>`{=html}
 Engineering, biomedical conc. BS; summa cum laude with honors | 2012 - 2016
