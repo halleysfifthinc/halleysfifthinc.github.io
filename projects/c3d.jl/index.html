@@ -142,19 +142,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="nav-link" href="../../publications.html"> 
 <span class="menu-text">Publications</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://bsky.app/profile/halleysfifthinc.dev"> 
+<span class="menu-text"><i class="fa-brands fa-bluesky" aria-label="bluesky"></i></span></a>
+  </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/halleysfifthinc"> <i class="bi bi-github" role="img">
 </i> 
 <span class="menu-text"></span></a>
-  </li>  
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com/allenofthehills"> <i class="bi bi-twitter" role="img">
-</i> 
-<span class="menu-text"></span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="https://bsky.app/profile/halleysfifthinc.dev"> 
-<span class="menu-text"><i class="fa-brands fa-bluesky" aria-label="bluesky"></i></span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -213,9 +208,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>C3D.jl is a library for reading and writing <code>.c3d</code> files from Julia.</p>
-<div id="493fdf77" class="cell" data-execution_count="2">
+<div id="36a96614" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">C3D</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>pc_real <span class="op">=</span> <span class="fu">readc3d</span>(fn <span class="co">#= artifact"sample01/Eb015pr.c3d" =#</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Precompiling C3D
+  ✓ DelimitedFiles
+  ✓ VaxData
+  ✓ C3D
+  3 dependencies successfully precompiled in 14 seconds. 4 already precompiled.</code></pre>
+</div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <div class="ansi-escaped-output">
 <pre>C3DFile("…/Eb015pr.c3d")
