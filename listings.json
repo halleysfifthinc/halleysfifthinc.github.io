@@ -11,6 +11,7 @@
   {
     "listing": "/posts.html",
     "items": [
+      "/posts/find-peaks-simd/index.html",
       "/posts/zotero-webdav/index.html"
     ]
   },
